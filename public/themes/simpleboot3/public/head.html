@@ -1,58 +1,130 @@
-<taglib name="app\portal\taglib\Portal"/>
-<include file="public@function"/>
-<meta name="author" content="ThinkCMF">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--声明文档的兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <!--移动设备-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/H-ui.reset.css"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/style.css"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/font-awesome.css"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/animate.css"/>
+    <!–[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]–>
+    <!--[if lte IE 8]><script src="https://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script><![endif]-->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--滑动列表-->
+    <script src="__TMPL__/public/assets/js/slide_str.js"></script>
+    <!--滚动条S-->
+    <script src="__TMPL__/public/assets/js/jquery.nicescroll.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("html").niceScroll();  // The document page (body)
+        });
+    </script>
+    <!--导航条E-->
+    <title></title>
+</head>
+<body>
+<!--头部S-->
+<div class="nicescroll-rails">
+    <div id="header">
+        <div class="header_wrapper">
+            <a href="/" class="logo">
+                <img src="__TMPL__/public/assets/img/logo.png" alt=""/>
+            </a>
 
-<!-- Set render engine for 360 browser -->
-<meta name="renderer" content="webkit">
+            <div class="nav_middle">
+                <ul class="nav_list clearfix">
+                    <li class="active">
+                        <a href="">
+                            首页
+                            <small class="shortname">home</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            优势
+                            <small class="shortname">home</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            案例
+                            <small class="shortname">home</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            新元创想
+                            <small class="shortname">home</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            动态
+                            <small class="shortname">home</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            伙伴
+                            <small class="shortname">home</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            联系
+                            <small class="shortname">home</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav_icon">
+                <img src="__TMPL__/public/assets/img/navBtn.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <!--头部E-->
+    <!--大屏点击显示联系我们S-->
+    <div class="content-div">
+        <div class="container cl">
+            <div class="left"><span class="redTitle">Hi,are you ready?</span>
 
-<!-- No Baidu Siteapp-->
-<meta http-equiv="Cache-Control" content="no-siteapp"/>
+                <p class="title">准备好开始了吗?<br>那就与我们取得联系吧</p>
 
-<!-- HTML5 shim for IE8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<![endif]-->
-<link rel="icon" href="__TMPL__/public/assets/images/favicon.png" type="image/png">
-<link rel="shortcut icon" href="__TMPL__/public/assets/images/favicon.png" type="image/png">
-<link href="__TMPL__/public/assets/simpleboot3/themes/simpleboot3/bootstrap.min.css" rel="stylesheet">
-<link href="__TMPL__/public/assets/simpleboot3/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"
-      type="text/css">
-<!--[if IE 7]>
-<link rel="stylesheet" href="__TMPL__/public/assets/simpleboot3/font-awesome/4.4.0/css/font-awesome-ie7.min.css">
-<![endif]-->
-<link href="__TMPL__/public/assets/css/style.css" rel="stylesheet">
-<style>
-    /*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
-    #backtotop {
-        position: fixed;
-        bottom: 50px;
-        right: 20px;
-        display: none;
-        cursor: pointer;
-        font-size: 50px;
-        z-index: 9999;
-    }
+                <p class="info">有一个品牌项目想和我们谈谈吗?您可以填写右边的表格，让我们了解您的项目需求，这是一个良好的开始，我们将会尽快与你取得联系。当然也欢迎您给我们写信或是打电话，让我们听到你的声音!</p>
 
-    #backtotop:hover {
-        color: #333
-    }
+                <div class="footTitle"><span class="titleB">NEW IDEAS</span><span>新元创想信息技术</span></div>
+                <p class="info">地 址：青岛胶州市宝龙城市广场写字楼15栋2205</p>
 
-    #main-menu-user li.user {
-        display: none
-    }
-</style>
-<script type="text/javascript">
-    //全局变量
-    var GV = {
-        ROOT: "__ROOT__/",
-        WEB_ROOT: "__WEB_ROOT__/",
-        JS_ROOT: "static/js/"
-    };
-</script>
-<script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
-<script src="__TMPL__/public/assets/js/jquery-migrate-1.2.1.js"></script>
-<script src="__STATIC__/js/wind.js"></script>
-	
+                <p class="info">电 话：+0532 - 8662 0102&nbsp;&nbsp;&nbsp;&nbsp;186-6186-1896 </p>
+
+                <p class="info">传 真：+0532 - 8662 0102</p>
+
+                <p class="info">E-mail：sun@7k999.com </p>
+
+            </div>
+            <div class="right"><p class="title">填写您的项目信息</p>
+
+                <p class="line"><input type="text" class="inputText" id="listName1" value="您的姓名"></p>
+
+                <p class="line"><input type="text" class="inputText" id="listCompany1" value="公司名称"></p>
+
+                <p class="line"><input type="text" class="inputText" id="listEmail1" value="您的电话"></p>
+
+                <p class="line"><input type="text" class="inputText" id="listTitle1" value="项目主题"></p>
+
+                <p class="line"><textarea class="textArea" id="listInfo1">告诉我们您的项目基本信息</textarea></p>
+
+                <p class="line"><input type="button" class="inputBtn" onclick="contactSubmit('/front/index/contact',$('#listName1').val(),$('#listCompany1').val(),$('#listEmail1').val(),$('#listTitle1').val(),$('#listInfo1').val())" value="立即提交"></p></div>
+        </div>
+        <img src="__TMPL__/public/assets/img/closeIcon.png" alt="" class="closeBtn"/>
+    </div>
+    <!--大屏点击显示联系我们E-->
