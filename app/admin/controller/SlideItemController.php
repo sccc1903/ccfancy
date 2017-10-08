@@ -97,7 +97,6 @@ class SlideItemController extends AdminBaseController
     {
         $id     = $this->request->param('id');
         $result = Db::name('slideItem')->where(['id' => $id])->find();
-
         $this->assign('result', $result);
         $this->assign('slide_id', $result['slide_id']);
         return $this->fetch();

@@ -11,11 +11,14 @@
 namespace app\portal\controller;
 
 use cmf\controller\HomeBaseController;
-
+use think\Db;
 class IndexController extends HomeBaseController
 {
     public function index()
     {
+        $slide = Db::name('slide_item')->where('status',1)->select()->toArray();
+
+        $this->assign('slide',$slide);
         return $this->fetch(':index');
     }
 }
