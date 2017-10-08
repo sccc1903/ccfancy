@@ -260,28 +260,6 @@
 <!--倒计时E-->
 <!--滑动广告S-->
 <!--滑动广告E-->
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
 <!--响应式右上角导航S-->
 <script>
@@ -364,9 +342,13 @@
             $('.box').removeClass('current_box').eq(0).addClass('current_box');
             $('#banner ul li').removeClass('current').eq(0).addClass('current');
             page = 1;
-        } else {
+        }else if(page==1){
+            $('.box').removeClass('current_box').eq(1).addClass('current_box');
+            $('#banner ul li').removeClass('current').eq(1).addClass('current');
+            page=page+1;
+        }else {
             $('.box').removeClass('current_box').eq(page - 1).addClass('current_box');
-            $('#banner ul li').removeClass('current').eq(pages - 1).addClass('current');
+            $('#banner ul li').removeClass('current').eq(page - 1).addClass('current');
         }
     });
     $('#banner ul li').click(function () {
