@@ -10,7 +10,20 @@
     font-family: MyriadPro-LightCond;
     src: url('../font/MyriadPro-LightCond.woff');
 }
-
+@font-face {
+    font-family: 'iconfont';  /* project id 356424 */
+    src: url('//at.alicdn.com/t/font_356424_3m4gwjcyt6clq5mi.eot');
+    src: url('//at.alicdn.com/t/font_356424_3m4gwjcyt6clq5mi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_356424_3m4gwjcyt6clq5mi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_356424_3m4gwjcyt6clq5mi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_356424_3m4gwjcyt6clq5mi.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
 @font-face {
     font-family: FujitsuSansBold;
     src: url('../font/FujitsuSansBold.woff');
@@ -577,7 +590,19 @@
     -ms-transition-duration: 0.4s;
     -o-transition-duration: 0.4s;
 }
-
+.product_listbox.big{
+    width: 25%;
+}
+.product_listbox.small{
+    width: 20%;
+}
+.product .iconfont.active{
+    color: #23ade5;
+}
+.product .iconfont{
+    cursor: pointer;
+    font-size: 24px;
+}
 .product_listbox>img {
     width: 100%;
 }
@@ -978,7 +1003,7 @@
 @media (min-width: 1024px) {
     #header .nav_list li {
         height: 88px;
-        padding: 35px 39px;
+        padding: 35px 34px;
     }
 
     #header .nav_list li a {
@@ -997,7 +1022,7 @@
 
     #header .nav_list li:hover {
         background: #23ade5;
-        padding: 15px 39px 0px;
+        padding: 15px 34px 0px;
     }
 
     #header .nav_list li:hover a {
@@ -1263,6 +1288,9 @@
         bottom: 10px;
         right: 12px;
     }
+    .product .iconfont{
+        font-size: 18px;
+    }
 
 }
 
@@ -1337,10 +1365,10 @@
         display: none;
     }
 
-    .product_listbox, .product_listbox1 {
+    .product_listbox.big,.product_listbox.small, .product_listbox1 {
         width: 50%;
     }
-
+    .switch{display: none}
     #footer {
         margin-top: 75px;
     }
@@ -1406,9 +1434,11 @@
         width: 40px;
     }
 
-    .product_listbox1,.product_listbox {
+    .product_listbox1,.product_listbox.big,.product_listbox.small {
         width: 50%;
     }
+    .switch{display: none}
+
     .mainTitle{
         font-size: 38px;
         margin-top: 0;

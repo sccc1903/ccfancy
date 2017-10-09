@@ -2,8 +2,10 @@
 <!--bannerS-->
 <div id="banner">
     <div class="boxall">
-        <foreach name="slide" item="vo" >
-            <a href="http://{$vo.url}" target="_blank"><div class="box" style="background-image: url('/upload/{$vo.image}');"></div></a>
+        <foreach name="slide" item="vo">
+            <a href="http://{$vo.url}" target="_blank">
+                <div class="box" style="background-image: url('/upload/{$vo.image}');"></div>
+            </a>
         </foreach>
 
         <button class="left btn"><img src="__TMPL__/public/assets/img/bannerLeft.png" alt=""/>
@@ -29,9 +31,13 @@
     <div class="mainSub"></div>
     <span class="mainInfo">精彩案例</span>
 
+    <div class="switch">
+        <span class="iconfont smalllist active">&#xe601;</span>
+        <span class="iconfont biglist">&#xe618;</span>
+    </div>
     <ul class="product_list clearfix">
         <a href="">
-            <li class="product_listbox">
+            <li class="product_listbox small">
                 <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
 
                 <div class="product_info">
@@ -41,7 +47,7 @@
             </li>
         </a>
         <a href="">
-            <li class="product_listbox">
+            <li class="product_listbox small">
                 <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
 
                 <div class="product_info">
@@ -51,7 +57,7 @@
             </li>
         </a>
         <a href="">
-            <li class="product_listbox">
+            <li class="product_listbox small">
                 <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
 
                 <div class="product_info">
@@ -61,7 +67,7 @@
             </li>
         </a>
         <a href="">
-            <li class="product_listbox">
+            <li class="product_listbox small">
                 <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
 
                 <div class="product_info">
@@ -71,7 +77,7 @@
             </li>
         </a>
         <a href="">
-            <li class="product_listbox">
+            <li class="product_listbox small">
                 <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
 
                 <div class="product_info">
@@ -81,7 +87,7 @@
             </li>
         </a>
         <a href="">
-            <li class="product_listbox">
+            <li class="product_listbox small">
                 <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
 
                 <div class="product_info">
@@ -92,7 +98,7 @@
         </a>
     </ul>
     <!--第二种产品-->
-    <ul class="product_list1 clearfix">
+    <!--<ul class="product_list1 clearfix">
         <li class="product_listbox1">
             <a href="">
                 <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
@@ -101,7 +107,7 @@
                 <i class="xf_msg"></i>
             </a>
         </li>
-    </ul>
+    </ul>-->
     <!--产品E-->
     <a href="/index/project">
         <div class="linkBtn"><span>查看更多牛B案例</span></div>
@@ -464,8 +470,35 @@
         $(this).find('.product_info').stop().fadeIn(500);
     }).mouseleave(function () {
         $(this).find('.product_info').stop().fadeOut(500);
+    });
+    $('.biglist').click(function () {
+        if (!$(this).hasClass('active')) {
+            $('.product .iconfont').removeClass('active');
+            $(this).addClass('active');
+            for (var i = 0; i < $('.product_listbox').length; i++) {
+                $('.product_listbox').eq(i).delay(200 * i).animate({opacity: 0}, 200);
+                $('.product_listbox').eq(i).delay(200 * $('.product_listbox').length).animate({
+                    opacity: 1
+                }, 200,function(){
+                    $('.product_listbox').removeClass('small').addClass('big');
+                });
+            }
+        }
+    });
+    $('.smalllist').click(function () {
+        if (!$(this).hasClass('active')) {
+            $('.product .iconfont').removeClass('active');
+            $(this).addClass('active');
+            for (var i = 0; i < $('.product_listbox').length; i++) {
+                $('.product_listbox').eq(i).delay(200 * i).animate({opacity: 0}, 200);
+                $('.product_listbox').eq(i).delay(200 * $('.product_listbox').length).animate({
+                    opacity: 1,
+                }, 200,function(){
+                    $('.product_listbox').removeClass('big').addClass('small');
+                });
+            }
+        }
     })
-
 </script>
 <!--产品列表E-->
 <!--手风琴S-->
