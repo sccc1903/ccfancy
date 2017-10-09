@@ -10,6 +10,7 @@
     font-family: MyriadPro-LightCond;
     src: url('../font/MyriadPro-LightCond.woff');
 }
+
 @font-face {
     font-family: 'iconfont';  /* project id 356424 */
     src: url('//at.alicdn.com/t/font_356424_3m4gwjcyt6clq5mi.eot');
@@ -18,12 +19,16 @@
     url('//at.alicdn.com/t/font_356424_3m4gwjcyt6clq5mi.ttf') format('truetype'),
     url('//at.alicdn.com/t/font_356424_3m4gwjcyt6clq5mi.svg#iconfont') format('svg');
 }
-.iconfont{
-    font-family:"iconfont" !important;
-    font-size:16px;font-style:normal;
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;}
+    -moz-osx-font-smoothing: grayscale;
+}
+
 @font-face {
     font-family: FujitsuSansBold;
     src: url('../font/FujitsuSansBold.woff');
@@ -136,7 +141,7 @@
     height: 80px;
     line-height: 80px;
     border-bottom: 2px solid #23ade5;
-    color: #E50012;
+    color: #23ade5;
     font-size: 64px;
     font-family: 'MyriadPro-Regular_0';
 }
@@ -214,7 +219,7 @@
 }
 
 .content-div .right .line .inputBtn:hover {
-    background: #e50012;
+    background: #23ade5;
     color: #fff;
 }
 
@@ -442,12 +447,39 @@
     position: absolute;
 }
 
-.product,.about {
+.product {
     text-align: center;
     padding: 70px 0px 80px 0;
     border-bottom: 1px solid #949494;
+}
+
+.about {
+    text-align: center;
+    padding: 70px 0px 80px 0;
+    border-bottom: 1px solid #949494;
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+    transform: translateY(50px);
+    -webkit-transition: all 2s ease-out;
+    -moz-transition: all 2s ease-out;
+    -ms-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out;
 
 }
+
+.about.fadeInUp {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+}
+
 .about .info {
     color: #444;
     font-size: 18px;
@@ -455,10 +487,11 @@
     width: 877px;
     margin: 0px auto;
 }
+
 .about .title {
     color: #444;
     font-size: 55px;
-    font-family: 'Noto Sans S Chinese Light','NotoSansHans-Light','微软雅黑';
+    font-family: 'Noto Sans S Chinese Light', 'NotoSansHans-Light', '微软雅黑';
 }
 
 .mainTitle {
@@ -590,28 +623,35 @@
     -ms-transition-duration: 0.4s;
     -o-transition-duration: 0.4s;
 }
-.product_listbox.big{
+
+.product_listbox.big {
     width: 25%;
 }
-.product_listbox.small{
+
+.product_listbox.small {
     width: 20%;
 }
-.product .iconfont.active{
+
+.product .iconfont.active {
     color: #23ade5;
 }
-.product .iconfont{
+
+.product .iconfont {
     cursor: pointer;
     font-size: 24px;
 }
-.product_listbox>img {
+
+.product_listbox > img {
     width: 100%;
 }
+
 .childPointer {
     position: absolute;
     bottom: 17px;
     right: 20px;
     width: 71px;
 }
+
 .product_listbox .product_info {
     position: absolute;
     top: 0;
@@ -631,6 +671,112 @@
     width: 100%;
     text-align: center;
     font-size: 16px
+}
+
+.service {
+    position: relative;
+    text-align: center;
+    padding: 70px 0px 80px 0px;
+}
+
+.service .content .child:hover .childTitle .titleEn,.service .content .child:hover .childTitle .titleCh{
+    color: #fff;
+}
+.service .content{
+    width: 1107px;
+    margin: 0 auto;
+}
+
+.service .content {
+    padding-top: 40px;
+}
+
+.service .content .child {
+    width: 26.65%;
+    margin: 0 1.8%;
+    text-align: left;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.service .content .child .childTitle {
+    position: relative;
+    border: 2px solid #23ade5;
+    height: 160px;
+    background: #fff;
+}
+.service .child:hover .childTitle{
+    background: #23ade5;
+    color: #fff;
+}
+
+.service .content .child .childTitle {
+    transition-duration: .5s;
+    -ms-transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+}
+
+.service .content .child .childTitle .titleEn {
+    margin: 75px 0 2px 8%;
+    font-size: 30px;
+    font-family: 'MyriadPro-Regular_0';
+    color: #23ade5;
+}
+
+.service .content .child .childTitle .titleEn {
+    transition-duration: .5s;
+    -ms-transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+}
+
+.service .content .child .childTitle .titleCh {
+    margin: 0 0 0 8%;
+    font-size: 20px;
+    color: #444;
+}
+
+.service .content .child .childTitle .titleCh {
+    transition-duration: .5s;
+    -ms-transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+}
+
+.service .content .child .childContent {
+    padding: 30px 0 0 0;
+}
+
+.service .content .child .childContent:after {
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.service .content .child .childContent ul {
+    float: left;
+}
+
+.service .content .child .childContent li {
+    padding-left: 25px;
+    font-size: 18px;
+    color: #444;
+    line-height: 32px;
+}
+
+.service .content .child .childContent li {
+    transition-duration: .5s;
+    -ms-transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+}
+
+.service .content .child .childContent li:hover {
+    color: #23ade5;
 }
 
 .accordion {
@@ -1037,7 +1183,7 @@
 
     #header .nav_list li.active {
         background: #23ade5;
-        padding: 15px 25px 0px;
+        padding: 15px 22px 0px;
     }
 
     #header .nav_list li.active a {
@@ -1091,51 +1237,171 @@
     #header .nav_list li {
         font-size: 14px;
     }
+
     .linkBtn {
         width: 158px;
         height: 30px;
         line-height: 30px;
         font-size: 12px;
     }
-    .product,.about {
+
+    .product, .about {
         padding: 58px 0px 66px 0;
 
     }
-    .content-div{height:544px;overflow:hidden;}
-    .content-div .container{transform-origin:center top;-moz-transform-origin:center top;-ms-transform-origin:center top;-o-transform-origin:center top;-webkit-transform-origin:center top;}
-    .content-div .container{transform:scale(0.83);-moz-transform:scale(0.83);-ms-transform:scale(0.83);-o-transform:scale(0.83);-webkit-transform:scale(0.83);}
-    .content-div .container{width:960px;}
-    .content-div .left{width:500px;}
-    .content-div .left .redTitle{height:60px;line-height:60px;font-size:48px;}
-    .content-div .left .title{line-height:54px;padding:14px 0 6px 0;margin-bottom:8px;font-size:44px;}
-    .content-div .left .sub{width:100%;margin:18px 0 12px 0;}
-    .content-div .left .footTitle{heihgt:30px;line-height:30px;font-size:20px;}
-    .content-div .left .footTitle .titleB{font-size:26px;}
-    .content-div .left .info{font-size:14px;}
-    .content-div .left .listTitle{font-size:20px;line-height:28px;margin-top:36px;}
-    .content-div .left .listInfo{line-height:22px;font-size:17px;margin-top:12px;}
-    .content-div .left .listInfo span{margin:0 12px;}
-    .content-div .right{width:400px;}
-    .content-div .right .title{font-size:24px;}
-    .content-div .right .line{padding:4px 0;}
-    .content-div .right .line .inputText{width:364px;font-size:14px;height:46px;line-height:46px;}
-    .content-div .right .line .textArea{width:364px;height:180px;font-size:14px;height:124px;}
-    .content-div .right .line .inputBtn{width:400px;font-size:17px;}
-    #listCloseBtn{transform-origin:center top;-moz-transform-origin:center top;-ms-transform-origin:center top;-o-transform-origin:center top;-webkit-transform-origin:center top;}
-    #listCloseBtn{transform:scale(0.83);-moz-transform:scale(0.83);-ms-transform:scale(0.83);-o-transform:scale(0.83);-webkit-transform:scale(0.83);}
+
+    .content-div {
+        height: 544px;
+        overflow: hidden;
+    }
+
+    .content-div .container {
+        transform-origin: center top;
+        -moz-transform-origin: center top;
+        -ms-transform-origin: center top;
+        -o-transform-origin: center top;
+        -webkit-transform-origin: center top;
+    }
+
+    .content-div .container {
+        transform: scale(0.83);
+        -moz-transform: scale(0.83);
+        -ms-transform: scale(0.83);
+        -o-transform: scale(0.83);
+        -webkit-transform: scale(0.83);
+    }
+
+    .content-div .container {
+        width: 960px;
+    }
+
+    .content-div .left {
+        width: 500px;
+    }
+
+    .content-div .left .redTitle {
+        height: 60px;
+        line-height: 60px;
+        font-size: 48px;
+    }
+
+    .content-div .left .title {
+        line-height: 54px;
+        padding: 14px 0 6px 0;
+        margin-bottom: 8px;
+        font-size: 44px;
+    }
+
+    .content-div .left .sub {
+        width: 100%;
+        margin: 18px 0 12px 0;
+    }
+
+    .content-div .left .footTitle {
+        heihgt: 30px;
+        line-height: 30px;
+        font-size: 20px;
+    }
+
+    .content-div .left .footTitle .titleB {
+        font-size: 26px;
+    }
+
+    .content-div .left .info {
+        font-size: 14px;
+    }
+
+    .content-div .left .listTitle {
+        font-size: 20px;
+        line-height: 28px;
+        margin-top: 36px;
+    }
+
+    .content-div .left .listInfo {
+        line-height: 22px;
+        font-size: 17px;
+        margin-top: 12px;
+    }
+
+    .content-div .left .listInfo span {
+        margin: 0 12px;
+    }
+
+    .content-div .right {
+        width: 400px;
+    }
+
+    .content-div .right .title {
+        font-size: 24px;
+    }
+
+    .content-div .right .line {
+        padding: 4px 0;
+    }
+
+    .content-div .right .line .inputText {
+        width: 364px;
+        font-size: 14px;
+        height: 46px;
+        line-height: 46px;
+    }
+
+    .content-div .right .line .textArea {
+        width: 364px;
+        height: 180px;
+        font-size: 14px;
+        height: 124px;
+    }
+
+    .content-div .right .line .inputBtn {
+        width: 400px;
+        font-size: 17px;
+    }
+
+    #listCloseBtn {
+        transform-origin: center top;
+        -moz-transform-origin: center top;
+        -ms-transform-origin: center top;
+        -o-transform-origin: center top;
+        -webkit-transform-origin: center top;
+    }
+
+    #listCloseBtn {
+        transform: scale(0.83);
+        -moz-transform: scale(0.83);
+        -ms-transform: scale(0.83);
+        -o-transform: scale(0.83);
+        -webkit-transform: scale(0.83);
+    }
+
     .about .title {
         font-size: 35px;
     }
+
     .about .info {
         font-size: 12px;
         line-height: 20px;
         width: 573px;
     }
+
     .childPointer {
         bottom: 10px;
         right: 13px;
         width: 44px;
     }
+    .service .content{
+        width: 796px;
+    }
+    .service{padding:58px 0px 66px 0;}
+    .service .content{padding-top:33px;}
+    .service .content .child{width:31.3%;margin:0 0.8%;}
+    .service .content .child .childTitle{height:132px;}
+    .service .content .child .childTitle .titleEn{margin:62px 0 2px 8%;font-size:19px;}
+    .service .content .child .childTitle .titleCh{font-size:13px;}
+    .service .content .child .childContent{padding:25px 0 0 0;}
+    .service .content .child .childContent li{padding-left:21px;font-size:12px;line-height:20px;}
+
+
 
 }
 
@@ -1158,6 +1424,7 @@
         padding: 35px 22px;
         margin: 0;
     }
+
     #header .nav_list li:hover {
         padding: 15px 22px;
     }
@@ -1169,41 +1436,181 @@
         -o-transform: scale(0.83);
         -webkit-transform: scale(0.83);
     }
+
     .linkBtn {
         width: 158px;
         height: 30px;
         line-height: 30px;
         font-size: 12px;
     }
-    .content-div .container{transform-origin:center top;-moz-transform-origin:center top;-ms-transform-origin:center top;-o-transform-origin:center top;-webkit-transform-origin:center top;}
-    .content-div .container{transform:scale(0.83);-moz-transform:scale(0.83);-ms-transform:scale(0.83);-o-transform:scale(0.83);-webkit-transform:scale(0.83);}
-    .content-div{height:490px;}
-    .content-div .container{width:960px;}
-    .content-div .left{width:500px;}
-    .content-div .left .redTitle{height:60px;line-height:60px;font-size:56px;}
-    .content-div .left .title{line-height:54px;padding:14px 0 6px 0;margin-bottom:8px;font-size:44px;}
-    .content-div .left .sub{width:100%;margin:18px 0 12px 0;}
-    .content-div .left .footTitle{heihgt:30px;line-height:30px;font-size:20px;}
-    .content-div .left .footTitle .titleB{font-size:26px;}
-    .content-div .left .info{font-size:14px;}
-    .content-div .left .listTitle{font-size:20px;line-height:28px;margin-top:36px;}
-    .content-div .left .listInfo{line-height:22px;font-size:17px;margin-top:12px;}
-    .content-div .left .listInfo span{margin:0 12px;}
-    .content-div .right{width:400px;}
-    .content-div .right .title{font-size:24px;}
-    .content-div .right .line{padding:4px 0;}
-    .content-div .right .line .inputText{width:364px;font-size:14px;line-height:46px;height:46px;}
-    .content-div .right .line .textArea{width:364px;height:116px;font-size:14px;}
-    .content-div .right .line .inputBtn{width:400px;font-size:17px;}
-    #listCloseBtn{transform-origin:center top;-moz-transform-origin:center top;-ms-transform-origin:center top;-o-transform-origin:center top;-webkit-transform-origin:center top;}
-    #listCloseBtn{transform:scale(0.83);-moz-transform:scale(0.83);-ms-transform:scale(0.83);-o-transform:scale(0.83);-webkit-transform:scale(0.83);}
+
+    .content-div .container {
+        transform-origin: center top;
+        -moz-transform-origin: center top;
+        -ms-transform-origin: center top;
+        -o-transform-origin: center top;
+        -webkit-transform-origin: center top;
+    }
+
+    .content-div .container {
+        transform: scale(0.83);
+        -moz-transform: scale(0.83);
+        -ms-transform: scale(0.83);
+        -o-transform: scale(0.83);
+        -webkit-transform: scale(0.83);
+    }
+
+    .content-div {
+        height: 490px;
+    }
+
+    .content-div .container {
+        width: 960px;
+    }
+
+    .content-div .left {
+        width: 500px;
+    }
+
+    .content-div .left .redTitle {
+        height: 60px;
+        line-height: 60px;
+        font-size: 56px;
+    }
+
+    .content-div .left .title {
+        line-height: 54px;
+        padding: 14px 0 6px 0;
+        margin-bottom: 8px;
+        font-size: 44px;
+    }
+
+    .content-div .left .sub {
+        width: 100%;
+        margin: 18px 0 12px 0;
+    }
+
+    .content-div .left .footTitle {
+        heihgt: 30px;
+        line-height: 30px;
+        font-size: 20px;
+    }
+
+    .content-div .left .footTitle .titleB {
+        font-size: 26px;
+    }
+
+    .content-div .left .info {
+        font-size: 14px;
+    }
+
+    .content-div .left .listTitle {
+        font-size: 20px;
+        line-height: 28px;
+        margin-top: 36px;
+    }
+
+    .content-div .left .listInfo {
+        line-height: 22px;
+        font-size: 17px;
+        margin-top: 12px;
+    }
+
+    .content-div .left .listInfo span {
+        margin: 0 12px;
+    }
+
+    .content-div .right {
+        width: 400px;
+    }
+
+    .content-div .right .title {
+        font-size: 24px;
+    }
+
+    .content-div .right .line {
+        padding: 4px 0;
+    }
+
+    .content-div .right .line .inputText {
+        width: 364px;
+        font-size: 14px;
+        line-height: 46px;
+        height: 46px;
+    }
+
+    .content-div .right .line .textArea {
+        width: 364px;
+        height: 116px;
+        font-size: 14px;
+    }
+
+    .content-div .right .line .inputBtn {
+        width: 400px;
+        font-size: 17px;
+    }
+
+    #listCloseBtn {
+        transform-origin: center top;
+        -moz-transform-origin: center top;
+        -ms-transform-origin: center top;
+        -o-transform-origin: center top;
+        -webkit-transform-origin: center top;
+    }
+
+    #listCloseBtn {
+        transform: scale(0.83);
+        -moz-transform: scale(0.83);
+        -ms-transform: scale(0.83);
+        -o-transform: scale(0.83);
+        -webkit-transform: scale(0.83);
+    }
+
     .about .title {
         font-size: 35px;
     }
+
     .about .info {
         font-size: 12px;
         line-height: 20px;
         width: 573px;
+    }
+
+    .service {
+        padding: 58px 0px 66px 0;
+    }
+
+    .service .content {
+        padding-top: 33px;
+        width: 750px;
+    }
+
+    .service .content .child {
+        width: 31.3%;
+        margin: 0 0.8%;
+    }
+
+    .service .content .child .childTitle {
+        height: 132px;
+    }
+
+    .service .content .child .childTitle .titleEn {
+        margin: 62px 0 2px 8%;
+        font-size: 19px;
+    }
+
+    .service .content .child .childTitle .titleCh {
+        font-size: 13px;
+    }
+
+    .service .content .child .childContent {
+        padding: 25px 0 0 0;
+    }
+
+    .service .content .child .childContent li {
+        padding-left: 21px;
+        font-size: 12px;
+        line-height: 20px;
     }
 
 }
@@ -1217,21 +1624,34 @@
         width: 100%;
         height: 600px;
     }
+
     .linkBtn {
         width: 230px;
         height: 44px;
         line-height: 44px;
         font-size: 16px;
     }
+
     .about .title {
         font-size: 30px;
         margin-bottom: 20px;
     }
+
     .about .info {
         font-size: 16px;
         line-height: 24px;
         width: 500px;
     }
+    .service{padding:58px 0px 66px 0;}
+    .service .content{padding-top:33px;width: 700px}
+    .service .content .child{width:31.3%;margin:0 0.8%;}
+    .service .content .child .childTitle{height:132px;}
+    .service .content .child .childTitle .titleEn{margin:62px 0 2px 8%;font-size:19px;}
+    .service .content .child .childTitle .titleCh{font-size:13px;}
+    .service .content .child .childContent{padding:25px 0 0 0;}
+    .service .content .child .childContent li{padding-left:21px;font-size:12px;line-height:20px;}
+
+
 }
 
 @media (max-width: 639px)and (min-width: 480px) {
@@ -1247,6 +1667,7 @@
     #banner ul li {
         width: 40px;
     }
+
     .mainTitle {
         font-size: 30px;
         line-height: 30px;
@@ -1263,6 +1684,7 @@
         font-size: 18px;
         margin-bottom: 10px;
     }
+
     .linkBtn {
         width: 158px;
         height: 30px;
@@ -1270,25 +1692,30 @@
         font-size: 12px;
         margin: 20px auto 0px auto;
     }
-    .about{
-        padding:0 0 20px;
+
+    .about {
+        padding: 0 0 20px;
     }
+
     .about .title {
         font-size: 18px;
         margin-bottom: 0px;
         padding-bottom: 10px;
     }
+
     .about .info {
         font-size: 12px;
         line-height: 18px;
         width: 85%;
     }
+
     .childPointer {
         width: 40px;
         bottom: 10px;
         right: 12px;
     }
-    .product .iconfont{
+
+    .product .iconfont {
         font-size: 18px;
     }
 
@@ -1365,10 +1792,14 @@
         display: none;
     }
 
-    .product_listbox.big,.product_listbox.small, .product_listbox1 {
+    .product_listbox.big, .product_listbox.small, .product_listbox1 {
         width: 50%;
     }
-    .switch{display: none}
+
+    .switch {
+        display: none
+    }
+
     #footer {
         margin-top: 75px;
     }
@@ -1434,29 +1865,73 @@
         width: 40px;
     }
 
-    .product_listbox1,.product_listbox.big,.product_listbox.small {
+    .product_listbox1, .product_listbox.big, .product_listbox.small {
         width: 50%;
     }
-    .switch{display: none}
 
-    .mainTitle{
+    .switch {
+        display: none
+    }
+
+    .mainTitle {
         font-size: 38px;
         margin-top: 0;
     }
-    .mainSub{
+
+    .mainSub {
         margin: 0 auto;
     }
-    .mainInfo{
+
+    .mainInfo {
         font-size: 18px;
         margin-bottom: 20px;
     }
-    .linkBtn{
+
+    .linkBtn {
         width: 158px;
         height: 30px;
         line-height: 30px;
         font-size: 12px;
         margin: 20px auto 0px auto;
     }
+    .service {
+        padding: 58px 0px 66px 0;
+    }
+
+    .service .content {
+        padding-top: 33px;
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .service .content .child {
+        width: 80%;
+        margin: 0 auto 10px;
+    }
+
+    .service .content .child .childTitle {
+        height: 80px;
+    }
+
+    .service .content .child .childTitle .titleEn {
+        margin: 10px 0 5px 8%;
+        font-size: 19px;
+    }
+
+    .service .content .child .childTitle .titleCh {
+        font-size: 13px;
+    }
+
+    .service .content .child .childContent {
+        padding: 25px 0 0 0;
+    }
+
+    .service .content .child .childContent li {
+        padding-left: 21px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
     #footer {
         padding: 10px 0;
     }
@@ -1579,36 +2054,142 @@
     .work .linkBtn {
         margin: 60px auto 0px auto;
     }
-    .content-div{height:595px;}
-    .content-div .container{width:960px;}
-    .content-div .left{width:500px;}
-    .content-div .left .redTitle{height:60px;line-height:60px;font-size:48px;}
-    .content-div .left .title{line-height:54px;padding:14px 0 6px 0;margin-bottom:8px;font-size:44px;}
-    .content-div .left .sub{width:100%;margin:18px 0 12px 0;}
-    .content-div .left .footTitle{heihgt:30px;line-height:30px;font-size:20px;}
-    .content-div .left .footTitle .titleB{font-size:26px;}
-    .content-div .left .info{font-size:14px;}
-    .content-div .left .listTitle{font-size:20px;line-height:28px;margin-top:36px;}
-    .content-div .left .listInfo{line-height:22px;font-size:17px;margin-top:12px;}
-    .content-div .left .listInfo span{margin:0 12px;}
-    .content-div .right{width:400px;}
-    .content-div .right .title{font-size:24px;}
-    .content-div .right .line{padding:4px 0;}
-    .content-div .right .line .inputText{width:364px;font-size:14px;height:46px;line-height:46px;}
-    .content-div .right .line .textArea{width:364px;height:124px;font-size:14px;}
-    .content-div .right .line .inputBtn{width:400px;font-size:17px;}
+
+    .content-div {
+        height: 595px;
+    }
+
+    .content-div .container {
+        width: 960px;
+    }
+
+    .content-div .left {
+        width: 500px;
+    }
+
+    .content-div .left .redTitle {
+        height: 60px;
+        line-height: 60px;
+        font-size: 48px;
+    }
+
+    .content-div .left .title {
+        line-height: 54px;
+        padding: 14px 0 6px 0;
+        margin-bottom: 8px;
+        font-size: 44px;
+    }
+
+    .content-div .left .sub {
+        width: 100%;
+        margin: 18px 0 12px 0;
+    }
+
+    .content-div .left .footTitle {
+        heihgt: 30px;
+        line-height: 30px;
+        font-size: 20px;
+    }
+
+    .content-div .left .footTitle .titleB {
+        font-size: 26px;
+    }
+
+    .content-div .left .info {
+        font-size: 14px;
+    }
+
+    .content-div .left .listTitle {
+        font-size: 20px;
+        line-height: 28px;
+        margin-top: 36px;
+    }
+
+    .content-div .left .listInfo {
+        line-height: 22px;
+        font-size: 17px;
+        margin-top: 12px;
+    }
+
+    .content-div .left .listInfo span {
+        margin: 0 12px;
+    }
+
+    .content-div .right {
+        width: 400px;
+    }
+
+    .content-div .right .title {
+        font-size: 24px;
+    }
+
+    .content-div .right .line {
+        padding: 4px 0;
+    }
+
+    .content-div .right .line .inputText {
+        width: 364px;
+        font-size: 14px;
+        height: 46px;
+        line-height: 46px;
+    }
+
+    .content-div .right .line .textArea {
+        width: 364px;
+        height: 124px;
+        font-size: 14px;
+    }
+
+    .content-div .right .line .inputBtn {
+        width: 400px;
+        font-size: 17px;
+    }
+
     .about .title {
         font-size: 44px;
     }
+
     .about .info {
         font-size: 14px;
         line-height: 26px;
         width: 690px;
     }
+
     .childPointer {
         bottom: 13px;
         right: 16px;
         width: 54px;
+    }
+
+    .service {
+        padding: 70px 0px 80px 0px;
+    }
+
+    .service .content {
+        padding-top: 40px;
+    }
+
+    .service .content .child .childTitle {
+        height: 160px;
+    }
+
+    .service .content .child .childTitle .titleEn {
+        margin: 75px 0 2px 8%;
+        font-size: 23px;
+    }
+
+    .service .content .child .childTitle .titleCh {
+        font-size: 16px;
+    }
+
+    .service .content .child .childContent {
+        padding: 30px 0 0 0;
+    }
+
+    .service .content .child .childContent li {
+        padding-left: 25px;
+        font-size: 14px;
+        line-height: 24px;
     }
 
 }
