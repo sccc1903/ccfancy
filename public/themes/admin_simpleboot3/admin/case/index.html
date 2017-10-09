@@ -3,33 +3,36 @@
 <body>
 <div class="wrap js-check-wrap">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="{:url('slide/index')}">案例</a></li>
-        <li><a href="{:url('slide/add')}">添加新案例</a></li>
+        <li class="active"><a href="{:url('case/index')}">案例页面列表</a></li>
+        <li><a href="{:url('case/add')}">添加新案例</a></li>
     </ul>
     <table class="table table-hover table-bordered margin-top-20">
         <thead>
         <tr>
             <th width="50">ID</th>
-            <th>幻灯片</th>
-            <th>备注</th>
+            <th>案例名</th>
+            <th>外链</th>
+            <th>描述</th>
+            <th>图片</th>
             <th width="160">{:lang('ACTIONS')}</th>
         </tr>
         </thead>
         <tbody>
-        <php>
-
-        </php>
-        <foreach name="slides" item="vo">
+        <foreach name="case" item="vo">
             <tr>
                 <td>{$vo.id}</td>
                 <td>{$vo.name}</td>
+                <td>{$vo.url}</td>
+                <td>{$vo.description}</td>
                 <td>
-                    {$vo.remark}
+                        <a href="javascript:parent.imagePreviewDialog('{:cmf_get_image_preview_url($vo['image'])}');">
+                            <i class="fa fa-photo fa-fw"></i>
+                        </a>
                 </td>
                 <td>
-                    <a href="{:url('slide/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
-                    <a href="javascript:parent.openIframeLayer('{:url('slideItem/index',array('slide_id'=>$vo['id']))}','管理 {$vo.name} 页面',{});">管理页面</a>
-                    <a href="{:url('slide/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>
+                <a href="{:url('case/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                <a href="{:url('case/delete',array('id'=>$vo['id']))}"
+                   class="js-ajax-delete">{:lang('DELETE')}</a>
                 </td>
             </tr>
         </foreach>

@@ -25,15 +25,15 @@
 //添加保存
      public function addsave() {
          $data = $this->request->param();
-
-         Db::name('case')->insert($data);
-
+         $_data = $data['post'];
+         Db::name('case')->insert($_data);
          $this->success("保存成功！", url("case/index"));
     }
 //    修改页面
      public function edit()
      {
-         $id = $this->request->param();
+         $id = $this->request->param('id');
+         
          $info = Db::name('case')->where('id',$id)->find();
          $this->assign('info',$info);
          return $this->fetch();
