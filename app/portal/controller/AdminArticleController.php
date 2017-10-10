@@ -38,6 +38,7 @@ class AdminArticleController extends AdminBaseController
 
         $categoryId = $this->request->param('category', 0, 'intval');
 
+
         $postService = new PostService();
         $data        = $postService->adminArticleList($param);
 
@@ -128,8 +129,8 @@ class AdminArticleController extends AdminBaseController
             ];
             hook('portal_admin_after_save_article', $hookParam);
 
-
-            $this->success('添加成功!', url('AdminArticle/edit', ['id' => $portalPostModel->id]));
+            $this->success('添加成功!', url('AdminArticle/index'));
+//            $this->success('添加成功!', url('AdminArticle/edit', ['id' => $portalPostModel->id]));
         }
 
     }
@@ -216,7 +217,7 @@ class AdminArticleController extends AdminBaseController
             ];
             hook('portal_admin_after_save_article', $hookParam);
 
-            $this->success('保存成功!');
+            $this->success('保存成功!',url('AdminArticle/index'));
 
         }
     }

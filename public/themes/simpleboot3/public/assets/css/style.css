@@ -793,19 +793,47 @@
 
 .news .right {
     float: right;
-    width: 48%;
-    margin-left: 2%
+    width: 40%;
+    margin-left: 2%;
+    position: relative;
+    margin-top: 10%;
 }
-
+.news .earthicon{
+    position: absolute;
+}
+.news .earthicon:nth-child(2){
+    top: 0;
+    right: 75%;
+}
+.news .earthicon:nth-child(3){
+    top: 75%;
+    right:20%;
+}
+.news .earthicon:nth-child(4){
+    top: 75%;
+    right:73%;
+}
+.news .earthicon:nth-child(5){
+    top: 110%;
+    right:50%;
+}
+.news .earthicon:nth-child(6){
+    bottom: 110%;
+    right:50%;
+}
+.news .earthicon:nth-child(7){
+    bottom: 50%;
+    right:15%;
+}
 .news .content {
     padding-top: 30px;
 }
 
-.news .child {
-    margin: 0 0 38px 0;
-    position: relative;
-    width: 100%;
-}
+/*.news .child {*/
+    /*margin: 0 0 38px 0;*/
+    /*position: relative;*/
+    /*width: 100%;*/
+/*}*/
 
 .news .child:after {
     content: "020";
@@ -815,8 +843,17 @@
     visibility: hidden;
 }
 
-.news .child .childTime {
+.news .content a:nth-child(even) .child .childTime {
     float: left;
+    width: 22.1%;
+    height: 124px;
+    border: 3px solid #23ade5;
+    text-align: center;
+    color: #333;
+    line-height: normal
+}
+.news .content a:nth-child(odd) .child .childTime {
+    float: right;
     width: 22.1%;
     height: 124px;
     border: 3px solid #23ade5;
@@ -840,11 +877,19 @@
     font-stretch: condensed;
 }
 
-.news .child .childInfo {
+.news .content a:nth-child(odd) .child .childInfo {
     float: left;
+    width: 71%;
+    margin-right: 5.3%;
+    color: #fff;
+    text-align: left;
+}
+.news .content a:nth-child(even) .child .childInfo  {
+    float: right;
     width: 71%;
     margin-left: 5.3%;
     color: #fff;
+    text-align: left;
 }
 
 .news .child .childInfo .title {
@@ -866,24 +911,17 @@
     width: 100%
 }
 
-.news .child .no {
-    width: 22.1%;
-    height: 50px;
-    float: left;
-}
 
 .news .child .moreBtn {
     position: relative;
     font-size: 16px;
-    padding-left: 10px;
-    margin-left: 6px;
-    width: 157px;
+    margin-top: 15px;
+    width: 20%;
     height: 40px;
     line-height: 40px;
     color: #fff;
-    background: #e50012 url(../images/rightIconOn.png) no-repeat 114px center;
-    background-size: 36px 18px;
-    font-family: 'é»‘ä½“';
+    background: #23ade5;
+    float: right;
 }
 
 .news .child .moreBtn span {
@@ -904,15 +942,26 @@
      -webkit-transition-duration: .5s;
 
 }
+.news .content a:nth-child(odd) .child .childlink i {
+    margin-right: 5.3%;
+}
 .news .childlink i:hover{
     color: #23ade5;
 
 }
 .news .earth{
-    animation: xuanzhuan 0;
-    -moz-animation: xuanzhuan 0;	/* Firefox */
-    -webkit-animation: xuanzhuan 0;	/* Safari 和 Chrome */
-    -o-animation: xuanzhuan 0;	/* Opera */
+    animation: xuanzhuan 5s;
+    -moz-animation: xuanzhuan 5s;	/* Firefox */
+    -webkit-animation: xuanzhuan 5s;	/* Safari 和 Chrome */
+    -o-animation: xuanzhuan 5s;	/* Opera */
+    animation-iteration-count: infinite;
+}
+.news .earthicon{
+    animation: fangda 3s;
+    -moz-animation: fangda 3s;	/* Firefox */
+    -webkit-animation: fangda 3s;	/* Safari 和 Chrome */
+    -o-animation: fangda 3s;	/* Opera */
+    animation-iteration-count: infinite;
 }
 @keyframes xuanzhuan {
     from{
@@ -928,6 +977,29 @@
         -moz-transform:rotate(360deg); 	/* Firefox */
         -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
         -o-transform:rotate(360deg); 	/* Opera */
+    }
+}
+@keyframes fangda {
+    100%{
+        transform:scale(1.2);
+        -ms-transform:scale(1.2); 	/* IE 9 */
+        -moz-transform:scale(1.2); 	/* Firefox */
+        -webkit-transform:scale(1.2); /* Safari 和 Chrome */
+        -o-transform:scale(1.2); 	/* Opera */
+    }
+    50%{
+        transform:scale(1);
+        -ms-transform:scale(1); 	/* IE 9 */
+        -moz-transform:scale(1); 	/* Firefox */
+        -webkit-transform:scale(1); /* Safari 和 Chrome */
+        -o-transform:scale(1); 	/* Opera */
+    }
+    0%{
+        transform:scale(1.2);
+        -ms-transform:scale(1.2); 	/* IE 9 */
+        -moz-transform:scale(1.2); 	/* Firefox */
+        -webkit-transform:scale(1.2); /* Safari 和 Chrome */
+        -o-transform:scale(1.2); 	/* Opera */
     }
 }
 #footer {

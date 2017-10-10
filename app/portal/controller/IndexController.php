@@ -16,8 +16,12 @@ class IndexController extends HomeBaseController
 {
     public function index()
     {
+//        首页幻灯片
         $slide = Db::name('slide_item')->where('status',1)->select()->toArray();
+//        经典案例
         $goodcase = Db::name('case')->select()->toArray();
+//        首页新闻
+        $news = Db::name('portal_post')->where('')->select()->toArray();
         $this->assign('case',$goodcase);
         $this->assign('slide',$slide);
         return $this->fetch(':index');
