@@ -17,7 +17,8 @@ class IndexController extends HomeBaseController
     public function index()
     {
         $slide = Db::name('slide_item')->where('status',1)->select()->toArray();
-
+        $goodcase = Db::name('case')->select()->toArray();
+        $this->assign('case',$goodcase);
         $this->assign('slide',$slide);
         return $this->fetch(':index');
     }

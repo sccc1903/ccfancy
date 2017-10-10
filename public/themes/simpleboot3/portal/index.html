@@ -36,66 +36,19 @@
         <span class="iconfont biglist">&#xe618;</span>
     </div>
     <ul class="product_list clearfix">
-        <a href="">
-            <li class="product_listbox small">
-                <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
 
-                <div class="product_info">
-                    <div>aaa</div>
-                    <img src="__TMPL__/public/assets/img/hidePointer.png" alt="" class="childPointer"/>
-                </div>
-            </li>
-        </a>
-        <a href="">
-            <li class="product_listbox small">
-                <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
+        <foreach name="case" item="v1">
+            <a href="{$v1.url}">
+                <li class="product_listbox small">
+                    <img src="/upload/{$v1.image}" alt=""/>
 
-                <div class="product_info">
-                    <div>aaa</div>
-                    <img src="__TMPL__/public/assets/img/hidePointer.png" alt="" class="childPointer"/>
-                </div>
-            </li>
-        </a>
-        <a href="">
-            <li class="product_listbox small">
-                <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
-
-                <div class="product_info">
-                    <div>aaa</div>
-                    <img src="__TMPL__/public/assets/img/hidePointer.png" alt="" class="childPointer"/>
-                </div>
-            </li>
-        </a>
-        <a href="">
-            <li class="product_listbox small">
-                <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
-
-                <div class="product_info">
-                    <div>aaa</div>
-                    <img src="__TMPL__/public/assets/img/hidePointer.png" alt="" class="childPointer"/>
-                </div>
-            </li>
-        </a>
-        <a href="">
-            <li class="product_listbox small">
-                <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
-
-                <div class="product_info">
-                    <div>aaa</div>
-                    <img src="__TMPL__/public/assets/img/hidePointer.png" alt="" class="childPointer"/>
-                </div>
-            </li>
-        </a>
-        <a href="">
-            <li class="product_listbox small">
-                <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
-
-                <div class="product_info">
-                    <div>aaa</div>
-                    <img src="__TMPL__/public/assets/img/hidePointer.png" alt="" class="childPointer"/>
-                </div>
-            </li>
-        </a>
+                    <div class="product_info">
+                        <div>{$v1.name}</div>
+                        <img src="__TMPL__/public/assets/img/hidePointer.png" alt="" class="childPointer"/>
+                    </div>
+                </li>
+            </a>
+        </foreach>
     </ul>
     <!--第二种产品-->
     <!--<ul class="product_list1 clearfix">
