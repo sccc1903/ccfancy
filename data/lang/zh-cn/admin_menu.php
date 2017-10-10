@@ -1,8 +1,6 @@
 <?php
 return array (
   'ADMIN_CASE_ADD' => '添加案例',
-  'ADMIN_CASE_DEFAULT' => '案例',
-  'ADMIN_CASE_INDEX' => '查看案例',
   'ADMIN_HOOK_INDEX' => '钩子管理',
   'ADMIN_HOOK_PLUGINLISTORDER' => '钩子插件排序',
   'ADMIN_HOOK_PLUGINS' => '钩子插件管理',
@@ -121,6 +119,8 @@ return array (
   'ADMIN_USER_INDEX' => '管理员',
   'ADMIN_USER_USERINFO' => '个人信息',
   'ADMIN_USER_USERINFOPOST' => '管理员个人信息修改提交',
+  'GOODCASE_CASE_DEFAULT' => '案例',
+  'GOODCASE_CASE_INDEX' => '查看案例',
   'PORTAL_ADMINARTICLE_ADD' => '添加文章',
   'PORTAL_ADMINARTICLE_ADDPOST' => '添加文章提交',
   'PORTAL_ADMINARTICLE_DELETE' => '文章删除',
