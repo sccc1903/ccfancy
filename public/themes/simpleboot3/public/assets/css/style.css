@@ -206,13 +206,13 @@
     width: 515px;
     cursor: pointer;
     height: 50px;
-    color: rgb(255, 0, 0);
+    color:#23ade5;
     font-size: 22px;
     font-family: "Microsoft YaHei", "Helvetica Neue", Tahoma, Arial, 微软雅黑, 宋体, 黑体;
     background: rgb(255, 255, 255);
     border-width: 2px;
     border-style: solid;
-    border-color: rgb(229, 0, 18);
+    border-color: #23ade5;
     border-image: initial;
 }
 
@@ -786,6 +786,15 @@
     color: #23ade5;
 }
 
+.contact{
+    background-image: url("../img/bg1.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center 88px;
+    background-color:#333 ;
+}
+.contact .mainTitle,.contact .mainInfo,.contact .info{color: #fff}
 .news .left {
     float: left;
     width: 50%;
@@ -1018,7 +1027,7 @@
 #footer {
     background: #23ade5;
     color: #fff;
-    margin-top: 88px;
+    /*margin-top: 88px;*/
     padding: 35px 0;
     line-height: 30px;
 }

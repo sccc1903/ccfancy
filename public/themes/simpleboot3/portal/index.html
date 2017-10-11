@@ -178,12 +178,19 @@
     </div>
 
 </div>
-<!--产品标题S-->
-<div class="textC"></div>
-<!--产品标题E-->
-<!--滑动广告S-->
-<!--滑动广告E-->
+<!--联系我们-->
+<div class="about contact news">
+    <p class="mainTitle">CONTACT US</p>
 
+    <div class="mainSub"></div>
+    <span class="mainInfo">联系我们</span>
+    <div class="content">
+        <p class="info">
+        如果你有意向拥有一个与众不同的网站，那你一定要联系我们。<br/>
+        如果你有意向加入我们，作为我们其中的一份子，也请你联系我们。<br/>
+        你们可以留言，也可以直接联系我们。我们的联系方式在右侧哦！</p>
+    </div>
+</div>
 <!--响应式右上角导航S-->
 <script>
     var w;
@@ -332,58 +339,6 @@
     });
 </script>
 <!--锚点E-->
-<!--产品标题数字跳动S-->
-<script type="text/javascript">
-    $(function () {
-        NumbersAnimate.Target = $(".textC");
-        NumbersAnimate.Numbers = 1238911623;
-        NumbersAnimate.Duration = 1500;
-        NumbersAnimate.Animate();
-    });
-    $(window).resize(function () {
-        var array = NumbersAnimate.Numbers.toString().split("");
-        var width = (array.length) * 18;
-        var window_width = document.body.clientWidth;
-        var left = (window_width - width) / 2;
-        $('.textC').css('margin-left', left);
-    });
-    var NumbersAnimate = {
-        Target: null,
-        Numbers: 0,
-        Duration: 500,
-        Animate: function () {
-            var array = NumbersAnimate.Numbers.toString().split("");
-            var width = (array.length) * 18;
-            var window_width = document.body.clientWidth;
-            var left = (window_width - width) / 2;
-            $('.textC').css('margin-left', left);
-            //遍历数组
-            for (var i = 0; i < array.length; i++) {
-                var currentN = array[i];
-                //数字append进容器
-                var t = $("<span></span>");
-                $(t).append("<span class=\"childNumber\">" + array[i] + "</span>");
-                $(t).css("margin-left", 18 * i + "px");
-                $(NumbersAnimate.Target).append(t);
-                //生成滚动数字,根据当前数字大小来定
-                for (var j = 0; j <= currentN; j++) {
-                    var tt;
-                    if (j == currentN) {
-                        tt = $("<span class=\"main\"><span>" + j + "</span></span>");
-                    } else {
-                        tt = $("<span class=\"childNumber\">" + j + "</span>");
-                    }
-                    $(t).append(tt);
-                    $(tt).css("margin-top", (j + 1) * 25 + "px");
-                }
-                $(t).animate({marginTop: -((parseInt(currentN) + 1) * 25) + "px"}, NumbersAnimate.Duration, function () {
-                    $(this).find(".childNumber").remove();
-                });
-            }
-        }
-    }
-</script>
-<!--产品标题数字跳动E-->
 <!--产品列表S-->
 <script>
     $('.product_listbox').mouseenter(function () {
