@@ -10,6 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\portal\controller;
 
+use app\portal\model\IndexModel;
 use cmf\controller\HomeBaseController;
 use think\Db;
 class IndexController extends HomeBaseController
@@ -21,7 +22,12 @@ class IndexController extends HomeBaseController
 //        经典案例
         $goodcase = Db::name('case')->select()->toArray();
 //        首页新闻
-        $news = Db::name('portal_post')->where('')->select()->toArray();
+        $indexModel = New IndexModel();
+        $news = $indexModel->getindexnews();
+
+
+
+        $this->assign('new',$news);
         $this->assign('case',$goodcase);
         $this->assign('slide',$slide);
         return $this->fetch(':index');
