@@ -1033,6 +1033,7 @@
     padding: 35px 0;
     line-height: 30px;
 }
+.fixed-bottom{position: fixed;bottom: 0;width: 100%}
 
 #footer .footer_wrapper {
     width: 960px;
