@@ -16,6 +16,13 @@
         <a href="/goodcase/case/index"><div class="goback">返回列表</div></a>
         <a href="tencent://message/?uin=2022644&Site=qq&Menu=yes"><div class="goutong">在线沟通</div></a>
     </div>
+    <div>
+        <div class="computer">
+            <div class="computerBox" id="computerBg">
+                <div class="computerBg"></div>
+            </div>
+        </div>
+    </div>
 </div>
 <!--产品列表S-->
 <script>
@@ -55,29 +62,23 @@
     })
 </script>
 <!--产品列表E-->
-<!--计算滚动高度触发特效S-->
 <script>
-    $(window).on("scroll", function () {
-        var scrolled = $(window).scrollTop();
-
-        // 视窗，即viewport，页面可视范围的窗口
-        setTimeout(function () {
-            $(".about>div").each(function () {
-                var current = $(this), // 当前元素
-                    w_height = $(window).outerHeight(), //视窗高度
-                    offsetTop = current.offset().top; //当前元素离顶部的高度
-                height=current.height();
-                height1=$('#header').height();
-                // 计算高度差（此处预留50是为了看效果）
-                // 当元素进入视窗时，添加class
-
-                if (scrolled + w_height >= offsetTop&&scrolled<=offsetTop+height+height1) {
-                    current.addClass("fadeInUp");
-                }
-            });
-        }, 200);
-    });
+$('.computerBox').mouseenter(function(){
+    function scroll(obj) {
+        var tmp = (obj.scrollTop)++;
+        //当滚动条到达右边顶端时
+        if (obj.scrollTop==tmp) obj.innerHTML += obj.innerHTML;
+        //当滚动条滚动了初始内容的宽度时滚动条回到最左端
+        if (obj.scrollTop>=obj.firstChild.offsetHeight) obj.scrollTop=0;
+    }
+    var a =    setInterval("scroll(document.getElementById('computerBg'))",20);
+    function stop(){
+        clearInterval(a);
+    }
+    function start(){
+        a=setInterval("scroll(document.getElementById('computerBg'))",30);
+    }
+})
 </script>
-<!--计算滚动高度触发特效E-->
 <include file="public@footer"/>
 
