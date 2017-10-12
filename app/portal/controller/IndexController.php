@@ -15,8 +15,7 @@ use cmf\controller\HomeBaseController;
 use think\Db;
 class IndexController extends HomeBaseController
 {
-    public function index()
-    {
+    public function index() {
 //        首页幻灯片
         $slide = Db::name('slide_item')->where('status',1)->select()->toArray();
 //        经典案例
@@ -32,4 +31,6 @@ class IndexController extends HomeBaseController
         $this->assign('slide',$slide);
         return $this->fetch(':index');
     }
+
+
 }
