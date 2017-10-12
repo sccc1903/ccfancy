@@ -9,7 +9,7 @@ namespace app\goodcase\controller;
 use cmf\controller\HomeBaseController;
 use think\Db;
 class CaseController extends HomeBaseController{
-    public function caselist() {
+    public function index() {
 
         return $this->fetch(':index');
     }
