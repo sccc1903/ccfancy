@@ -3,11 +3,11 @@
     <li class="cl share_top" id="share_top">
         TOP
     </li>
-    <li class="cl share_qq">
+    <a href="tencent://message/?uin=2022644&Site=qq&Menu=yes"><li class="cl share_qq">
         <img src="__TMPL__/public/assets/img/QQ.png" alt=""/>
 
         <p>QQ客服</p>
-    </li>
+    </li></a>
     <li class="cl share_tel">
         <img src="__TMPL__/public/assets/img/call.png" alt=""/>
 
@@ -125,5 +125,23 @@
     }
 </script>
 <!--回到顶部E-->
+<!--底部置底-->
+<script>
+    $(function(){
+        function footerPosition(){
+            $("#footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                    winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if(!(contentHeight > winHeight)){
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("#footer").addClass("fixed-bottom");
+            } else {
+                $("#footer").removeClass("fixed-bottom");
+            }
+        }
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
+</script>
 </body>
 </html>

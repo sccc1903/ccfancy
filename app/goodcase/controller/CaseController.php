@@ -13,4 +13,8 @@ class CaseController extends HomeBaseController{
 
         return $this->fetch(':index');
     }
+    public function detail() {
+
+        return $this->fetch(':detail');
+    }
 }
