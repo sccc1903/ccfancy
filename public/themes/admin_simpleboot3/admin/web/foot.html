@@ -1,0 +1,42 @@
+<include file="public@header" />
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('web/foot')}">网站脚部信息</a></li>
+    </ul>
+    <form class="form-horizontal js-ajax-form margin-top-20" method="post" action="{:url('web/footsave')}">
+        <div class="form-group">
+            <label for="input-name" class="col-sm-2 control-label">公司名</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="test" class="form-control" id="input-name" name="name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-copyright" class="col-sm-2 control-label">版权信息</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="test" class="form-control" id="input-copyright" name="copyright">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-address" class="col-sm-2 control-label">公司地址</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="test" class="form-control" id="input-address" name="address">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-tel" class="col-sm-2 control-label">公司电话</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="test" class="form-control" id="input-tel" name="tel">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

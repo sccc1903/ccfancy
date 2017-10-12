@@ -22,4 +22,5 @@
       'id' => '\d+',
     ),
   ),
+  'case/index' => 'goodcase/case/index',
 );

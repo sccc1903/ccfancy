@@ -119,6 +119,7 @@ return array (
   'ADMIN_USER_INDEX' => '管理员',
   'ADMIN_USER_USERINFO' => '个人信息',
   'ADMIN_USER_USERINFOPOST' => '管理员个人信息修改提交',
+  'ADMIN_WEB_FOOT' => '网站相关设置',
   'GOODCASE_CASE_DEFAULT' => '案例',
   'GOODCASE_CASE_INDEX' => '查看案例',
   'PORTAL_ADMINARTICLE_ADD' => '添加文章',
