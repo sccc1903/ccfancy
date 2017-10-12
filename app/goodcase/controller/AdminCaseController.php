@@ -34,7 +34,7 @@ namespace app\goodcase\controller;
      public function edit()
      {
          $id = $this->request->param('id');
-         
+
          $info = Db::name('case')->where('id',$id)->find();
          $this->assign('info',$info);
          return $this->fetch(':edit');

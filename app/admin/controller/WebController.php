@@ -13,10 +13,7 @@ use think\Db;
 class WebController extends AdminBaseController{
 
     public function foot() {
-        $data = Db::name('foot')->find();
-        if (!empty($data)) {
-            $this->assign('data', $data);
-        }
+
         return $this->fetch('foot');
     }
 

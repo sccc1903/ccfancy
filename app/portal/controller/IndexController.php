@@ -23,11 +23,7 @@ class IndexController extends HomeBaseController
 //        首页新闻
         $indexModel = New IndexModel();
         $news = $indexModel->getindexnews();
-//        脚部信息
-        $data = Db::name('foot')->find();
-        if (!empty($data)) {
-            $this->assign('data', $data);
-        }
+//        脚部信息 在HomeBaseController中通过方法获得
 
         $this->assign('new',$news);
         $this->assign('case',$goodcase);
