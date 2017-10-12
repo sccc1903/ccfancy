@@ -14,9 +14,13 @@ class IndexModel extends Model{
             ->alias('a')
             ->join('ccf_portal_post b','a.post_id = b.id')
             ->join('ccf_portal_category c','a.category_id = c.id')
-            ->where(['c.name'=>'首页新闻'])
+            ->where(['c.name'=>'首页新闻','b.recommended'=>'1'])
             ->select()
             ->toArray();
+       foreach($data as $k => $v){
+           $data[$k]['month'] = date('F',$v['update_time']);
+           $data[$k]['day'] = date('d',$v['update_time']);
+       }
 return $data;
     }
 

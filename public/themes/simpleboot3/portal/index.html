@@ -128,37 +128,22 @@
     <div class="cl container">
         <div class="left">
             <div class="content">
-                <a href="/Home/News/detail/news_id/540.html">
+                <foreach name="new" item="v2">
+                <a href="">
                     <div class="child">
                         <div class="childTime">
-                            <p class="timeMonth">July</p>
-                            <p class="timeDay">11</p>
+                            <p class="timeMonth">{$v2.month}</p>
+                            <p class="timeDay">{$v2.day}</p>
                         </div>
                         <div class="childInfo">
-                            <p class="title">新元创想正式推出类分答语言社交服务系统，浅析分答在线付费语音问答系</p>
+                            <p class="title">{$v2.post_title}</p>
 
-                            <p class="info">
-                                新元创想正式推出类分答语言社交服务系统，适用于企业售前售后的语音服务模式，提高客户活跃度</p>
+                            <p class="info">{$v2.post_excerpt}</p>
                         </div>
                         <div class="childlink"><i class="iconfont">&#xe607;</i></div>
                     </div>
                 </a>
-                <a href="/Home/News/detail/news_id/540.html">
-                    <div class="child">
-                        <div class="childTime">
-                            <p class="timeMonth">July</p>
-                            <p class="timeDay">11</p>
-                        </div>
-                        <div class="childInfo">
-                            <p class="title">新元创想正式推出类分答语言社交服务系统，浅析分答在线付费语音问答系</p>
-
-                            <p class="info">
-                                新元创想正式推出类分答语言社交服务系统，适用于企业售前售后的语音服务模式，提高客户活跃度</p>
-                        </div>
-                        <div class="childlink"><i class="iconfont">&#xe607;</i></div>
-                    </div>
-                </a>
-
+                </foreach>
                 <div class="child">
                     <div class="childInfo"><a href="/index/news">
                         <div class="moreBtn">更多信息</div>
