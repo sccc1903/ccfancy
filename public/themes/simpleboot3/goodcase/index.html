@@ -15,17 +15,18 @@
     </div>
     <ul class="product_list clearfix">
 
-
-            <a href="{}">
+        <foreach name="case" item="v1">
+            <a href="/goodcase/case/detail/id/{$v1.id}">
                 <li class="product_listbox small">
-                    <img src="/upload/" alt=""/>
+                    <img src="/upload/{$v1.image}" alt=""/>
 
                     <div class="product_info">
-                        <div>123</div>
+                        <div>{$v1.name}</div>
                         <img src="__TMPL__/public/assets/img/hidePointer.png" alt="" class="childPointer"/>
                     </div>
                 </li>
             </a>
+        </foreach>
 
     </ul>
     <!--产品E-->

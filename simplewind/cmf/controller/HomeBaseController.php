@@ -24,6 +24,10 @@ class HomeBaseController extends BaseController
         parent::_initialize();
         $siteInfo = cmf_get_site_info();
         View::share('site_info', $siteInfo);
+        $webfootdata = Db::name('foot')->find();
+        if (!empty($webfootdata)) {
+            $this->assign('webfootdata', $webfootdata);
+        }
     }
 
     public function _initializeView()
