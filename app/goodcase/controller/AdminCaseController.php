@@ -26,9 +26,17 @@ namespace app\goodcase\controller;
 //添加保存
      public function addsave() {
          $data = $this->request->param();
+         if (!empty($data['photo_names']) && !empty($data['photo_urls'])) {
+             $data['post']['photos'] = [];
+             foreach ($data['photo_urls'] as $key => $url) {
+                 $photoUrl = cmf_asset_relative_url($url);
+                 array_push($data['post']['photos'], ["url" => $photoUrl, "name" => $data['photo_names'][$key]]);
+             }
+             $data['post']['photos'] = serialize($data['post']['photos']);
+         }
          $_data = $data['post'];
          Db::name('case')->insert($_data);
-         $this->success("保存成功！", url("case/index"));
+         $this->success("保存成功！", url("adminCase/index"));
     }
 //    修改页面
      public function edit()
@@ -36,6 +44,10 @@ namespace app\goodcase\controller;
          $id = $this->request->param('id');
 
          $info = Db::name('case')->where('id',$id)->find();
+
+         $info['content'] = htmlspecialchars_decode($info['content']);
+         $photos = unserialize($info['photos']);
+         $this->assign('photos',$photos);
          $this->assign('info',$info);
          return $this->fetch(':edit');
      }
@@ -45,11 +57,20 @@ namespace app\goodcase\controller;
          $data = $this->request->param();
 
          $data['post']['image'] = cmf_asset_relative_url($data['post']['image']);
+         if (!empty($data['photo_names']) && !empty($data['photo_urls'])) {
+             $data['post']['photos'] = [];
+             foreach ($data['photo_urls'] as $key => $url) {
+                 $photoUrl = cmf_asset_relative_url($url);
+                 array_push($data['post']['photos'], ["url" => $photoUrl, "name" => $data['photo_names'][$key]]);
+             }
+             $data['post']['photos'] = serialize($data['post']['photos']);
+         }
 
+         $_data = $data['post'];
 
-         Db::name('case')->update($data['post']);
+         Db::name('case')->update($_data);
 
-          $this->success('修改成功','case/index');
+          $this->success('修改成功','adminCase/index');
      }
 //删除
      public function delete()
@@ -57,6 +78,6 @@ namespace app\goodcase\controller;
 
          $id = $this->request->param('id');
          Db::name('case')->where('id',$id)->delete();
-        $this->success('删除成功','case/index');
+        $this->success('删除成功','adminCase/index');
      }
  }

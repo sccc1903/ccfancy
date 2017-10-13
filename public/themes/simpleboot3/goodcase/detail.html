@@ -15,9 +15,10 @@
         </div>
     </div>
     <div>
-        <img src="__TMPL__/public/assets/img/info_img.png" alt="" class="info_img"/>
-        <img src="__TMPL__/public/assets/img/info_img.png" alt="" class="info_img"/>
-        <img src="__TMPL__/public/assets/img/info_img.png" alt="" class="info_img"/>
+        <foreach name="photos" item="v1">
+            <img src="/upload/{$v1.url}" alt="" class="info_img"/>
+        </foreach>
+
     </div>
     <div>
         <a href="/goodcase/case/index">

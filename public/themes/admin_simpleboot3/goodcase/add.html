@@ -1,12 +1,23 @@
 <include file="public@header"/>
+<script type="text/html" id="photos-item-tpl">
+    <li id="saved-image{id}">
+        <input id="photo-{id}" type="hidden" name="photo_urls[]" value="{filepath}">
+        <input class="form-control" id="photo-{id}-name" type="text" name="photo_names[]" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+        <a href="javascript:uploadOneImage('图片上传','#photo-{id}');">替换</a>
+        <a href="javascript:(function(){$('#saved-image{id}').remove();})();">移除</a>
+    </li>
+</script>
 </head>
 <body>
 <div class="wrap js-check-wrap">
     <ul class="nav nav-tabs">
-        <li><a href="{:url('case/index')}">案例页面列表</a></li>
-        <li class="active"><a href="{:url('case/add')}">添加新案例</a></li>
+        <li><a href="{:url('AdminCase/index')}">案例页面列表</a></li>
+        <li class="active"><a href="{:url('AdminCase/add')}">添加新案例</a></li>
     </ul>
-    <form action="{:url('case/addsave')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+    <form action="{:url('adminCase/addsave')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
         <div class="row">
             <div class="col-md-9">
                 <table class="table table-bordered">
@@ -32,7 +43,15 @@
                     <tr>
                         <th>案例内容</th>
                         <td>
-                            <script type="text/plain" id="content" name="post[post_content]"></script>
+                            <script type="text/plain" id="content" name="post[content]"></script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>相册</th>
+                        <td>
+                            <ul id="photos" class="pic-list list-unstyled form-inline"></ul>
+                            <a href="javascript:uploadMultiImage('图片上传','#photos','photos-item-tpl');"
+                               class="btn btn-default btn-sm">选择图片</a>
                         </td>
                     </tr>
                 </table>
@@ -62,7 +81,7 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
-                <a class="btn btn-default" href="{:url('case/index')}">{:lang('BACK')}</a>
+                <a class="btn btn-default" href="{:url('adminCase/index')}">{:lang('BACK')}</a>
             </div>
         </div>
     </form>

@@ -1,6 +1,6 @@
 <?php
 return array (
-  'ADMIN_CASE_ADD' => '添加案例',
+  'ADMIN_ADMINCASE_ADD' => '添加案例',
   'ADMIN_HOOK_INDEX' => '钩子管理',
   'ADMIN_HOOK_PLUGINLISTORDER' => '钩子插件排序',
   'ADMIN_HOOK_PLUGINS' => '钩子插件管理',
