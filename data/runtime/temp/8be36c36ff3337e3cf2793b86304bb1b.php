@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:37:"themes/simpleboot3/portal\\index.html";i:1507369477;s:35:"themes/simpleboot3/public\head.html";i:1507359837;s:37:"themes/simpleboot3/public\footer.html";i:1507356313;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:37:"themes/simpleboot3/portal\\index.html";i:1507798502;s:35:"themes/simpleboot3/public\head.html";i:1507799896;s:37:"themes/simpleboot3/public\footer.html";i:1507798826;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -15,18 +15,16 @@
     <link rel="stylesheet" href="__TMPL__/public/assets/css/style.css"/>
     <link rel="stylesheet" href="__TMPL__/public/assets/css/font-awesome.css"/>
     <link rel="stylesheet" href="__TMPL__/public/assets/css/animate.css"/>
-    <!–[if IE]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]–>
+    <!--[if IE]-->
+    <!--<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>-->
+    <!--[endif]–->
     <!--[if lte IE 8]><script src="https://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script><![endif]-->
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!--滑动列表-->
-    <script src="__TMPL__/public/assets/js/slide_str.js"></script>
     <!--滚动条S-->
     <script src="__TMPL__/public/assets/js/jquery.nicescroll.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("html").niceScroll();  // The document page (body)
+            $("html").niceScroll({});  // The document page (body)
         });
     </script>
     <!--导航条E-->
@@ -44,26 +42,26 @@
             <div class="nav_middle">
                 <ul class="nav_list clearfix">
                     <li class="active">
-                        <a href="">
+                        <a href="/">
                             首页
                             <small class="shortname">home</small>
                         </a>
                     </li>
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--优势-->
+                            <!--<small class="shortname">home</small>-->
+                        <!--</a>-->
+                    <!--</li>-->
                     <li>
-                        <a href="">
-                            优势
-                            <small class="shortname">home</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
+                        <a href="/goodcase/case/index">
                             案例
                             <small class="shortname">home</small>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            新元创想
+                            初创
                             <small class="shortname">home</small>
                         </a>
                     </li>
@@ -129,78 +127,59 @@
         <img src="__TMPL__/public/assets/img/closeIcon.png" alt="" class="closeBtn"/>
     </div>
     <!--大屏点击显示联系我们E-->
-    <!--bannerS-->
-    <div id="banner">
-        <div class="boxall">
-            <div class="box current_box"
-                 style="background-image: url('__TMPL__/public/assets/img/banner1.jpg');"></div>
-            <div class="box"
-                 style="background-image: url('__TMPL__/public/assets/img/banner2.jpg')"></div>
-            <div class="box"
-                 style="background-image: url('__TMPL__/public/assets/img/banner3.jpg')"></div>
-            <div class="box"
-                 style="background-image: url('__TMPL__/public/assets/img/banner4.jpg')"></div>
-            <button class="left btn"><img src="__TMPL__/public/assets/img/bannerLeft.png" alt=""/>
-            </button>
-            <button class="right btn"><img src="__TMPL__/public/assets/img/bannerRight.png" alt=""/>
-            </button>
-            <ul class="pagination">
+<!--bannerS-->
+<div id="banner">
+    <div class="boxall">
+        <?php if(is_array($slide) || $slide instanceof \think\Collection || $slide instanceof \think\Paginator): if( count($slide)==0 ) : echo "" ;else: foreach($slide as $key=>$vo): ?>
+            <a href="http://<?php echo $vo['url']; ?>" target="_blank">
+                <div class="box" style="background-image: url('/upload/<?php echo $vo['image']; ?>');"></div>
+            </a>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
 
-            </ul>
-        </div>
-        <img src="__TMPL__/public/assets/img/bannerBg.jpg" alt="" class="bannerBg"/>
+        <button class="left btn"><img src="__TMPL__/public/assets/img/bannerLeft.png" alt=""/>
+        </button>
+        <button class="right btn"><img src="__TMPL__/public/assets/img/bannerRight.png" alt=""/>
+        </button>
+        <ul class="pagination">
+
+        </ul>
     </div>
-    <!--bannerE-->
-    <!--锚点S-->
-    <div>
-        <a href="#myAnchor" rel="" id="anchor1" class="anchorLink">这是一个锚点</a>
-    </div>
-    <!--锚点E-->
-    <!--产品S-->
+    <img src="__TMPL__/public/assets/img/bannerBg.jpg" alt="" class="bannerBg"/>
+</div>
+<!--bannerE-->
+<!--锚点S-->
+<div>
+    <a href="#myAnchor" rel="" id="anchor1" class="anchorLink">这是一个锚点</a>
+</div>
+<!--锚点E-->
+<!--产品S-->
 <div class="product">
     <p class="mainTitle">WONDERFUL CASE</p>
+
     <div class="mainSub"></div>
     <span class="mainInfo">精彩案例</span>
 
+    <div class="switch">
+        <span class="iconfont smalllist active">&#xe601;</span>
+        <span class="iconfont biglist">&#xe618;</span>
+    </div>
     <ul class="product_list clearfix">
-        <li class="product_listbox">
-            <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
 
-            <div class="product_info">
-                <div>aaa</div>
-            </div>
-        </li>
-        <li class="product_listbox">
-            <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
+        <?php if(is_array($case) || $case instanceof \think\Collection || $case instanceof \think\Paginator): if( count($case)==0 ) : echo "" ;else: foreach($case as $key=>$v1): ?>
+            <a href="<?php echo $v1['url']; ?>">
+                <li class="product_listbox small">
+                    <img src="/upload/<?php echo $v1['image']; ?>" alt=""/>
 
-            <div class="product_info">
-                <div>aaa</div>
-            </div>
-        </li>
-        <li class="product_listbox">
-            <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
-
-            <div class="product_info">
-                <div>aaa</div>
-            </div>
-        </li>
-        <li class="product_listbox">
-            <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
-
-            <div class="product_info">
-                <div>aaa</div>
-            </div>
-        </li>
-        <li class="product_listbox">
-            <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
-
-            <div class="product_info">
-                <div>aaa</div>
-            </div>
-        </li>
+                    <div class="product_info">
+                        <div><?php echo $v1['name']; ?></div>
+                        <img src="__TMPL__/public/assets/img/hidePointer.png" alt="" class="childPointer"/>
+                    </div>
+                </li>
+            </a>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
     </ul>
     <!--第二种产品-->
-    <ul class="product_list1 clearfix">
+    <!--<ul class="product_list1 clearfix">
         <li class="product_listbox1">
             <a href="">
                 <img src="__TMPL__/public/assets/img/product.jpg" alt=""/>
@@ -209,510 +188,403 @@
                 <i class="xf_msg"></i>
             </a>
         </li>
-    </ul>
+    </ul>-->
     <!--产品E-->
-    <a href="/index/project">
+    <a href="/goodcase/case/index">
         <div class="linkBtn"><span>查看更多牛B案例</span></div>
     </a>
 </div>
-    <!--产品标题S-->
-    <div class="textC"></div>
-    <!--产品标题E-->
-    <!--手风琴S-->
-    <div class="accordion">
-        <ul class="accordion_list">
-            <li>
-                <div class="accordion_listMsg">
-                    <div>
-                        <p>1</p>
+<!--关于我们-->
+<div class="about" style="background: #FBFBFB">
+    <div>
+        <p class="mainTitle">ABOUT US</p>
 
-                        <p>建立联系后，我们将发送文档资料并邀请您参与后续的培训课程。</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="accordion_listMsg">
-                    <div>
-                        <p>1</p>
+        <div class="mainSub"></div>
+        <span class="mainInfo">关于我们</span>
 
-                        <p>建立联系后，我们将发送文档资料并邀请您参与后续的培训课程。</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="accordion_listMsg">
-                    <div>
-                        <p>1</p>
+        <p class="title">专注于互联网定制开发服务</p>
 
-                        <p>建立联系后，我们将发送文档资料并邀请您参与后续的培训课程。</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="accordion_listMsg">
-                    <div>
-                        <p>1</p>
-
-                        <p>建立联系后，我们将发送文档资料并邀请您参与后续的培训课程。</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="accordion_listMsg">
-                    <div>
-                        <p>1</p>
-
-                        <p>建立联系后，我们将发送文档资料并邀请您参与后续的培训课程。</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <p class="info">
+            初创成立于2017年，是一家专门从事互联网定制开发服务的工作室，我们拥有多名专业的前后端开发工程师，能够满足顾客的各方面需求，在开发领域有着雄厚的技术基础，我们的目标是打造与众不同。自成立以来为客户提供多个成功的项目解决方案和优质服务。</p>
+        <a href="/index/project">
+            <div class="linkBtn"><span>了解更多详情</span></div>
+        </a>
     </div>
-    <!--手风琴E-->
-    <!--滑动列表S-->
-    <div class="su-accordion">
-        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus 0">
-            <div class="su-spoiler-title"><span class="su-spoiler-icon"></span>领英服务介绍
-            </div>
-            <div class="su-spoiler-content su-clearfix">
-                <p>
-                    服务内容按照您所选择的套餐形式而有所不同。通常而言，服务包含领英平台上品牌驻地的建设（公司主页及产品/服务专区）、驻地维护（实时资讯动态）及推广计划（各式广告推广）的制作三大环节。另外，我们将定期循环为您提供专业的技能知识培训，以方便您更好地了解并使用领英，拓宽市场获得。</p>
+</div>
+<!--优势-->
+<div class="about">
+    <div>
 
-                <p>针对服务中详细的驻地维护频率及广告形式，可至页面顶端“<span style="color: #ff0000;">服务</span>”栏进行查看；关于服务中各环节的详细介绍，可至页面顶端“<span
-                        style="color: #ff0000;">培训中心</span>”栏进行了解与学习。</p>
+    <p class="mainTitle">OUR ADVANTAGE</p>
 
-            </div>
+    <div class="mainSub"></div>
+    <span class="mainInfo">我们的优势</span>
+
+    <p class="title">做适合客户的定制网站</p>
+
+    <p class="info">做适合用户的定制网站，全程无忧，一站式服务，享受极致体验。<br/>经验丰富工程师为您解决一切烦恼，放心满意。<br/>放心，一切交给我们！</p>
+</div>
+</div>
+<!--服务-->
+<div class="about service" style="background: #FBFBFB">
+    <div>
+
+    <p class="mainTitle">OUR ADVANTAGE</p>
+
+    <div class="mainSub"></div>
+    <span class="mainInfo">我们的优势</span>
+
+    <div class="content">
+        <div class="child">
+            <div class="childTitle"><p class="titleEn">Platform develop</p>
+
+                <p class="titleCh">平台开发</p></div>
         </div>
-        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
-            <div class="su-spoiler-title"><span class="su-spoiler-icon"></span>领英能帮我们做的
-            </div>
-            <div class="su-spoiler-content su-clearfix">
-                <p>
-                    关于服务板块，我们可为您提供套餐服务各环节中的图片制作、中外文案编辑、推广计划制定、数据报告分析等服务。在此期间，Linked-media的专业策划团队、投放团队、设计团队及外籍优化团队将竭诚为您服务，解答您在服务中产生的任何疑问并给出我们专业的指导和建议。</p>
+        <div class="child">
+            <div class="childTitle"><p class="titleEn">Website custom</p>
 
-                <p>
-                    关于学习培训版块，Linked-Media的培训师团队不仅可为您提供领英实时新技能的操作培训，同时，我们将为依据国内外关于海外营销、新媒体营销、品牌形象建立及规划等方面的最新报告，结合服务中所了解的特殊难题和情况，为您提供专属指导，开拓思路。</p>
-
-            </div>
+                <p class="titleCh">网站定制</p></div>
         </div>
-        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
-            <div class="su-spoiler-title"><span class="su-spoiler-icon"></span>领英到底能为我带来什么？
-            </div>
-            <div class="su-spoiler-content su-clearfix">
-                <p>领英是链接国内外市场的重要平台，不仅是其全球覆盖量及会员优质度为试图打开国际市场的各企业、政府提供了重要的形象驻地及宣传推广平台，是目前<span
-                        style="font-family: arial, helvetica, sans-serif;">BTOB</span>采购的重要途径。</p>
+        <div class="child">
+            <div class="childTitle"><p class="titleEn">Mobile appication</p>
 
-                <p>同时，领英是许多国际<span style="font-family: arial, helvetica, sans-serif;">500</span>强高管及政府发展采购人员的询盘、招聘、采购重要渠道，在领英上的形象将决定着合作意愿的强弱度。
-                </p>
-
-            </div>
-        </div>
-        <div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
-            <div class="su-spoiler-title"><span class="su-spoiler-icon"></span>你们能帮我做什么？
-            </div>
-            <div class="su-spoiler-content su-clearfix">
-                <p>
-                    关于服务板块，我们可为您提供套餐服务各环节中的图片制作、中外文案编辑、推广计划制定、数据报告分析等服务。在此期间，Linked-media的专业策划团队、投放团队、设计团队及外籍优化团队将竭诚为您服务，解答您在服务中产生的任何疑问并给出我们专业的指导和建议。</p>
-
-                <p>
-                    关于学习培训版块，Linked-Media的培训师团队不仅可为您提供领英实时新技能的操作培训，同时，我们将为依据国内外关于海外营销、新媒体营销、品牌形象建立及规划等方面的最新报告，结合服务中所了解的特殊难题和情况，为您提供专属指导，开拓思路。</p>
-
-            </div>
+                <p class="titleCh">手机应用</p></div>
         </div>
     </div>
-    <!--滑动列表E-->
-    <!--2.滑动列表S-->
-    <ul id="accordion" class="accordion" style="margin: 0;">
-        <li style="width: 100%;" class="open">
-            <div class="link">低费用 ≠ 低成本<i class="fa fa-chevron-circle-down arrow fa-lg"></i></div>
-            <div class="news submenu" style="display: block;">
-                <div class="newsinfoon">
-                    <p><br></p>
+</div>
+</div>
+<!--新闻-->
+<div class="about news">
+    <div>
+    <p class="mainTitle">NEWS CENTER</p>
 
-                    <p><span style="font-size: 16px;">　　最近，我和一个非常，非常有钱的人坐在一起开会。我们都在讨论是雇佣成本比较高的有潜力的员工，还是外包给第三方。第三方相当便宜，但可能没有有潜力的员工那么有经验和考虑周全。<br></span>
-                    </p>
+    <div class="mainSub"></div>
+    <span class="mainInfo">新闻中心</span>
 
-                    <p><br></p>
+    <div class="cl container">
+        <div class="left">
+            <div class="content">
+                <?php if(is_array($new) || $new instanceof \think\Collection || $new instanceof \think\Paginator): if( count($new)==0 ) : echo "" ;else: foreach($new as $key=>$v2): ?>
+                <a href="">
+                    <div class="child">
+                        <div class="childTime">
+                            <p class="timeMonth"><?php echo $v2['month']; ?></p>
+                            <p class="timeDay"><?php echo $v2['day']; ?></p>
+                        </div>
+                        <div class="childInfo">
+                            <p class="title"><?php echo $v2['post_title']; ?></p>
 
-                    <p><span style="font-size: 16px;">　　他唯一的观点是：“低费用不是意味着低成本。”</span></p>
-
-                    <p><br></p>
-
-                    <p><span style="font-size: 16px;">　　随着时间的推移，糟糕的决定，所犯的错误和差强人意的计划加起来比在第一时间就做好所花费的费用更多。这并不意味着花费额外的钱只是为了花钱，他的观点只是表达了为价值付钱的重要性。</span>
-                    </p></div>
-            </div>
-        </li>
-    </ul>
-    <!--2.滑动列表E-->
-    <!--倒计时S-->
-    <span id="divdown1"></span>
-    <!--倒计时E-->
-    <!--滑动广告S-->
-    <!--滑动广告E-->
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <!--右侧分享E-->
-    <ul class="share_right">
-        <li class="cl share_top" id="share_top">
-            TOP
-        </li>
-        <li class="cl share_qq">
-            <img src="http://7k999.kuboluo.com/res/images/fixed/QQ.png" alt=""/>
-
-            <p>QQ客服</p>
-        </li>
-        <li class="cl share_tel">
-            <img src="http://7k999.kuboluo.com/res/images/fixed/call.png" alt=""/>
-
-            <p>0532-86701888</p>
-        </li>
-        <li class="cl share_code">
-            <img src="http://7k999.kuboluo.com/res/images/fixed/code.png" alt=""/>
-        </li>
-    </ul>
-    <!--右侧分享S-->
-    <!--尾部S-->
-    <div id="footer">
-        <a name="myAnchor" id="myAnchor"></a>
-
-        <div class="footer_wrapper clearfix">
-            <div class="footer_l">
-                <div class="company_name">技术有限公司</div>
-                <div class="copyright">Copyright 2014－2016 7k999.com All Rights Reserved</div>
-                <div class="company_addr">Add：山东省青岛胶州宝龙城市广场A座2205</div>
-                <div class="company_tel">Tel:0532-86620102</div>
-            </div>
-            <div class="footer_r">
-                <div>关注我们</div>
-                <div>
-                    <a href=""><img src="http://7k999.kuboluo.com/res/images/weiboIcon.png" alt=""/></a>
-                    <a href=""><img src="http://7k999.kuboluo.com/res/images/weiboIcon.png" alt=""/></a>
-                    <a href=""><img src="http://7k999.kuboluo.com/res/images/weiboIcon.png" alt=""/></a>
+                            <p class="info"><?php echo $v2['post_excerpt']; ?></p>
+                        </div>
+                        <div class="childlink"><i class="iconfont">&#xe607;</i></div>
+                    </div>
+                </a>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+                <div class="child">
+                    <div class="childInfo"><a href="/index/news">
+                        <div class="moreBtn">更多信息</div>
+                    </a></div>
                 </div>
             </div>
         </div>
+        <div class="right">
+            <img src="__TMPL__/public/assets/img/earth.png" alt="" class="earth"/>
+            <img src="__TMPL__/public/assets/img/AI.png" alt="" class="earthicon"/>
+            <img src="__TMPL__/public/assets/img/html.png" alt="" class="earthicon"/>
+            <img src="__TMPL__/public/assets/img/icon-css3.png" alt="" class="earthicon"/>
+            <img src="__TMPL__/public/assets/img/jquery.png" alt="" class="earthicon"/>
+            <img src="__TMPL__/public/assets/img/php.png" alt="" class="earthicon"/>
+            <img src="__TMPL__/public/assets/img/PS.png" alt="" class="earthicon"/>
+        </div>
     </div>
-    <!--尾部E-->
-    <!--响应式右上角导航S-->
-    <script>
-        var w;
-        var click = true;
-        function change() {
-            w = $(window).width();
-            if (w < 1024) {
-                $(".content-div").stop(false, true).animate({top: "-1000px"}, 8000);
-                $('.nav_middle').css('right', '-125px');
-                $('.nav_icon').removeClass('wapBtnAn');
+</div>
+</div>
+<!--联系我们-->
+<div class="about contact">
+    <div>
+    <p class="mainTitle">CONTACT US</p>
 
-            } else {
-                $('.nav_icon').removeClass('wapBtnAn');
-                $('.nav_middle').css('right', '0');
-                click = true
+    <div class="mainSub"></div>
+    <span class="mainInfo">联系我们</span>
+
+    <div class="content">
+        <p class="info">
+            如果你有意向拥有一个与众不同的网站，那你一定要联系我们。<br/>
+            如果你有意向加入我们，作为我们其中的一份子，也请你联系我们。<br/>
+            你们可以留言，也可以直接联系我们。我们的联系方式在右侧哦！</p>
+    </div>
+    </div>
+</div>
+<!--banner JS S-->
+<script>
+    var i;
+    $('.box').eq(0).addClass('current_box');
+    $('.pagination').html('<li class="current"></li>');
+    $('.boxall').mouseover(function () {
+        $('.left').animate({"left": "15px"}, 300);
+        $('.right').animate({"right": "15px"}, 300);
+    }).mouseleave(function () {
+        $('.left').animate({"left": "-75px"}, 300);
+        $('.right').animate({"right": "-75px"}, 300);
+    });
+    var page = 0;
+    var pages = $('.box').length;
+    for (i = 1; i < pages; i++) {
+        $('.pagination').append('<li></li>');
+    }
+    $('.left').click(function () {
+        page = page - 1;
+        if (page <= 0) {
+            $('.box').removeClass('current_box').eq(pages - 1).addClass('current_box');
+            $('#banner ul li').removeClass('current').eq(pages - 1).addClass('current');
+            page = pages;
+        } else {
+            $('.box').removeClass('current_box').eq(page - 1).addClass('current_box');
+            $('#banner ul li').removeClass('current').eq(page - 1).addClass('current');
+        }
+
+    });
+    $('.right').click(function () {
+        page = page + 1;
+        if (page > pages) {
+            $('.box').removeClass('current_box').eq(0).addClass('current_box');
+            $('#banner ul li').removeClass('current').eq(0).addClass('current');
+            page = 1;
+        } else if (page == 1) {
+            $('.box').removeClass('current_box').eq(1).addClass('current_box');
+            $('#banner ul li').removeClass('current').eq(1).addClass('current');
+            page = page + 1;
+        } else {
+            $('.box').removeClass('current_box').eq(page - 1).addClass('current_box');
+            $('#banner ul li').removeClass('current').eq(page - 1).addClass('current');
+        }
+    });
+    $('#banner ul li').click(function () {
+        $('#banner ul li').removeClass('current');
+        $(this).addClass('current');
+        var current = $(this).index();
+        $('.boxall .box').removeClass('current_box').eq(current).addClass('current_box');
+        page = current + 1;
+    });
+</script>
+<!--banner JS E-->
+<!--锚点S-->
+<script>
+    $('a').click(function () {
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 500);
+        return false;
+    });
+</script>
+<!--锚点E-->
+<!--产品列表S-->
+<script>
+    $('.product_listbox').mouseenter(function () {
+        $('.product_listbox').not($(this)).find('.product_info').stop().fadeOut(500);
+        $(this).find('.product_info').stop().fadeIn(500);
+    }).mouseleave(function () {
+        $(this).find('.product_info').stop().fadeOut(500);
+    });
+    $('.biglist').click(function () {
+        if (!$(this).hasClass('active')) {
+            $('.product .iconfont').removeClass('active');
+            $(this).addClass('active');
+            for (var i = 0; i < $('.product_listbox').length; i++) {
+                $('.product_listbox').eq(i).delay(200 * i).animate({opacity: 0}, 200);
+                $('.product_listbox').eq(i).delay(200 * $('.product_listbox').length).animate({
+                    opacity: 1
+                }, 200, function () {
+                    $('.product_listbox').removeClass('small').addClass('big');
+                });
             }
         }
-        $(function () {
-            change()
-        });
-        $(window).resize(function () {
-            change()
-        });
-        $('.nav_icon').click(function () {
-            w = $(window).width();
-            if (w < 1024) {
-                if (click) {
-                    $(".nav_middle").stop(false, true).animate({right: "0"}, 800);
-                    $('.nav_icon').addClass('wapBtnAn');
-                    click = false;
-                } else {
-                    $(".nav_middle").stop(false, true).animate({right: "-125px"}, 800);
-                    $('.nav_icon').removeClass('wapBtnAn');
-                    click = true;
-                }
-            } else {
-                $(".content-div").stop(false, true).animate({top: "0"}, 800);
-                $('.nav_icon').addClass('wapBtnAn');
+    });
+    $('.smalllist').click(function () {
+        if (!$(this).hasClass('active')) {
+            $('.product .iconfont').removeClass('active');
+            $(this).addClass('active');
+            for (var i = 0; i < $('.product_listbox').length; i++) {
+                $('.product_listbox').eq(i).delay(200 * i).animate({opacity: 0}, 200);
+                $('.product_listbox').eq(i).delay(200 * $('.product_listbox').length).animate({
+                    opacity: 1,
+                }, 200, function () {
+                    $('.product_listbox').removeClass('big').addClass('small');
+                });
             }
-        });
-        $('.closeBtn').click(function () {
-            $(".content-div").stop(false, true).animate({top: "-1000px"}, 800);
+        }
+    })
+</script>
+<!--产品列表E-->
+<!--计算滚动高度触发特效S-->
+<script>
+    $(window).on("scroll", function () {
+        var scrolled = $(window).scrollTop();
+
+        // 视窗，即viewport，页面可视范围的窗口
+        setTimeout(function () {
+            $(".about>div").each(function () {
+                var current = $(this), // 当前元素
+                        w_height = $(window).outerHeight(), //视窗高度
+                        offsetTop = current.offset().top; //当前元素离顶部的高度
+                        height=current.height();
+                        height1=$('#header').height();
+                // 计算高度差（此处预留50是为了看效果）
+                // 当元素进入视窗时，添加class
+
+                if (scrolled + w_height >= offsetTop&&scrolled<=offsetTop+height+height1) {
+                    current.addClass("fadeInUp");
+                }
+            });
+        }, 200);
+    });
+</script>
+<!--计算滚动高度触发特效E-->
+<!--右侧分享E-->
+<ul class="share_right">
+    <li class="cl share_top" id="share_top">
+        TOP
+    </li>
+    <a href="tencent://message/?uin=2022644&Site=qq&Menu=yes"><li class="cl share_qq">
+        <img src="__TMPL__/public/assets/img/QQ.png" alt=""/>
+
+        <p>QQ客服</p>
+    </li></a>
+    <li class="cl share_tel">
+        <img src="__TMPL__/public/assets/img/call.png" alt=""/>
+
+        <p>0532-86701888</p>
+    </li>
+    <li class="cl share_code">
+        <img src="__TMPL__/public/assets/img/code.png" alt=""/>
+    </li>
+</ul>
+<!--右侧分享S-->
+<!--尾部S-->
+<div id="footer">
+    <a name="myAnchor" id="myAnchor"></a>
+
+    <div class="footer_wrapper clearfix">
+        <div class="footer_l">
+            <div class="company_name"><?php echo $webfootdata['name']; ?></div>
+            <div class="copyright"><?php echo $webfootdata['copyright']; ?></div>
+            <div class="company_addr">Add：<?php echo $webfootdata['address']; ?></div>
+            <div class="company_tel">Tel:<?php echo $webfootdata['tel']; ?></div>
+        </div>
+        <div class="footer_r">
+            <div>关注我们</div>
+            <div>
+                <a href=""><img src="__TMPL__/public/assets/img/weiboIcon.png" alt=""/></a>
+                <a href=""><img src="__TMPL__/public/assets/img/weixinIcon.png" alt=""/></a>
+                <a href=""><img src="__TMPL__/public/assets/img/qqIcon.png" alt=""/></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--尾部E-->
+<!--响应式右上角导航S-->
+<script>
+    var w;
+    var click = true;
+    function change() {
+        w = $(window).width();
+        if (w < 1024) {
+            $(".content-div").stop(false, true).animate({top: "-1000px"}, 8000);
+            $('.nav_middle').css('right', '-125px');
             $('.nav_icon').removeClass('wapBtnAn');
 
-        })
-    </script>
-    <!--响应式右上角导航E-->
-    <!--banner JS S-->
-    <script>
-        var i;
-        $('.pagination').html('<li class="current"></li>');
-        $('.boxall').mouseover(function () {
-            $('.left').animate({"left": "15px"}, 300);
-            $('.right').animate({"right": "15px"}, 300);
-        }).mouseleave(function () {
-            $('.left').animate({"left": "-75px"}, 300);
-            $('.right').animate({"right": "-75px"}, 300);
-        });
-        var page = 0;
-        var pages = $('.box').length;
-        for(i=1;i<pages;i++){
-            $('.pagination').append('<li></li>');
+        } else {
+            $('.nav_icon').removeClass('wapBtnAn');
+            $('.nav_middle').css('right', '0');
+            click = true
         }
-        $('.left').click(function () {
-            page = page - 1;
-            if (page <= 0) {
-                $('.box').removeClass('current_box').eq(pages - 1).addClass('current_box');
-                $('#banner ul li').removeClass('current').eq(pages - 1).addClass('current');
-                page = pages;
+    }
+    $(function () {
+        change()
+    });
+    $(window).resize(function () {
+        change()
+    });
+    $('.nav_icon').click(function () {
+        w = $(window).width();
+        if (w < 1024) {
+            if (click) {
+                $(".nav_middle").stop(false, true).animate({right: "0"}, 800);
+                $('.nav_icon').addClass('wapBtnAn');
+                click = false;
             } else {
-                $('.box').removeClass('current_box').eq(page - 1).addClass('current_box');
-                $('#banner ul li').removeClass('current').eq(page - 1).addClass('current');
+                $(".nav_middle").stop(false, true).animate({right: "-125px"}, 800);
+                $('.nav_icon').removeClass('wapBtnAn');
+                click = true;
             }
+        } else {
+            $(".content-div").stop(false, true).animate({top: "0"}, 800);
+            $('.nav_icon').addClass('wapBtnAn');
+        }
+    });
+    $('.closeBtn').click(function () {
+        $(".content-div").stop(false, true).animate({top: "-1000px"}, 800);
+        $('.nav_icon').removeClass('wapBtnAn');
 
-        });
-        $('.right').click(function () {
-            page = page + 1;
-            if (page > pages) {
-                $('.box').removeClass('current_box').eq(0).addClass('current_box');
-                $('#banner ul li').removeClass('current').eq(0).addClass('current');
-                page = 1;
+    })
+</script>
+<!--响应式右上角导航E-->
+<!--回到顶部S-->
+<script>
+    window.onload = function () {
+        var obtn = document.getElementById('share_top');
+        //获取页面可视区的高度
+        var clientHeight = document.documentElement.clientHeight;
+        var timer = null;
+        var isTop = true;
+
+        window.onscroll = function () {
+            var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (osTop >= clientHeight) {
+                obtn.style.display = "block"; //显示按钮
             } else {
-                $('.box').removeClass('current_box').eq(page - 1).addClass('current_box');
-                $('#banner ul li').removeClass('current').eq(pages - 1).addClass('current');
+                obtn.style.display = "none"; //隐藏按钮
             }
-        });
-        $('#banner ul li').click(function () {
-            $('#banner ul li').removeClass('current');
-            $(this).addClass('current');
-            var current = $(this).index();
-            $('.boxall .box').removeClass('current_box').eq(current).addClass('current_box');
-            page = current + 1;
-        });
-    </script>
-    <!--banner JS E-->
-    <!--回到顶部S-->
-    <script>
-        window.onload = function () {
-            var obtn = document.getElementById('share_top');
-            //获取页面可视区的高度
-            var clientHeight = document.documentElement.clientHeight;
-            var timer = null;
-            var isTop = true;
-
-            window.onscroll = function () {
+            if (!isTop) {
+                clearInterval(timer);
+            }
+            isTop = false;
+        };
+        obtn.onclick = function () {
+            //设置定时器
+            timer = setInterval(function () {
                 var osTop = document.documentElement.scrollTop || document.body.scrollTop;
-                if (osTop >= clientHeight) {
-                    obtn.style.display = "block"; //显示按钮
-                } else {
-                    obtn.style.display = "none"; //隐藏按钮
-                }
-                if (!isTop) {
+                var ispeed = Math.floor(-osTop / 6);
+                //获取滚动条距离顶部的高度
+                document.documentElement.scrollTop = document.body.scrollTop = osTop + ispeed;
+                isTop = true;
+                if (osTop == 0) {
                     clearInterval(timer);
                 }
-                isTop = false;
-            };
-            obtn.onclick = function () {
-                //设置定时器
-                timer = setInterval(function () {
-                    var osTop = document.documentElement.scrollTop || document.body.scrollTop;
-                    var ispeed = Math.floor(-osTop / 6);
-                    //获取滚动条距离顶部的高度
-                    document.documentElement.scrollTop = document.body.scrollTop = osTop + ispeed;
-                    isTop = true;
-                    if (osTop == 0) {
-                        clearInterval(timer);
-                    }
-                }, 30);
-            }
-
+            }, 30);
         }
-    </script>
-    <!--回到顶部E-->
-    <!--锚点S-->
-    <script>
-        $('a').click(function () {
-            $('html, body').animate({
-                scrollTop: $($(this).attr('href')).offset().top
-            }, 500);
-            return false;
-        });
-    </script>
-    <!--锚点E-->
-    <!--产品标题数字跳动S-->
-    <script type="text/javascript">
-        $(function () {
-            NumbersAnimate.Target = $(".textC");
-            NumbersAnimate.Numbers = 1238911623;
-            NumbersAnimate.Duration = 1500;
-            NumbersAnimate.Animate();
-        });
-        $(window).resize(function () {
-            var array = NumbersAnimate.Numbers.toString().split("");
-            var width = (array.length) * 18;
-            var window_width = document.body.clientWidth;
-            var left = (window_width - width) / 2;
-            $('.textC').css('margin-left', left);
-        });
-        var NumbersAnimate = {
-            Target: null,
-            Numbers: 0,
-            Duration: 500,
-            Animate: function () {
-                var array = NumbersAnimate.Numbers.toString().split("");
-                var width = (array.length) * 18;
-                var window_width = document.body.clientWidth;
-                var left = (window_width - width) / 2;
-                $('.textC').css('margin-left', left);
-                //遍历数组
-                for (var i = 0; i < array.length; i++) {
-                    var currentN = array[i];
-                    //数字append进容器
-                    var t = $("<span></span>");
-                    $(t).append("<span class=\"childNumber\">" + array[i] + "</span>");
-                    $(t).css("margin-left", 18 * i + "px");
-                    $(NumbersAnimate.Target).append(t);
-                    //生成滚动数字,根据当前数字大小来定
-                    for (var j = 0; j <= currentN; j++) {
-                        var tt;
-                        if (j == currentN) {
-                            tt = $("<span class=\"main\"><span>" + j + "</span></span>");
-                        } else {
-                            tt = $("<span class=\"childNumber\">" + j + "</span>");
-                        }
-                        $(t).append(tt);
-                        $(tt).css("margin-top", (j + 1) * 25 + "px");
-                    }
-                    $(t).animate({marginTop: -((parseInt(currentN) + 1) * 25) + "px"}, NumbersAnimate.Duration, function () {
-                        $(this).find(".childNumber").remove();
-                    });
-                }
+
+    }
+</script>
+<!--回到顶部E-->
+<!--底部置底-->
+<script>
+    $(function(){
+        function footerPosition(){
+            $("#footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                    winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if(!(contentHeight > winHeight)){
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("#footer").addClass("fixed-bottom");
+            } else {
+                $("#footer").removeClass("fixed-bottom");
             }
         }
-    </script>
-    <!--产品标题数字跳动E-->
-    <!--产品列表S-->
-    <script>
-        $('.product_listbox').mouseenter(function () {
-            $('.product_listbox').not($(this)).find('.product_info').stop().fadeOut(500);
-            $(this).find('.product_info').stop().fadeIn(500);
-        }).mouseleave(function () {
-            $(this).find('.product_info').stop().fadeOut(500);
-        })
-
-    </script>
-    <!--产品列表E-->
-    <!--手风琴S-->
-    <script>
-        $('.accordion_list li').mouseenter(function () {
-            $('.accordion_list li').css('width', '15%');
-            $(this).css('width', '40%');
-        });
-        $('.accordion_list li').mouseleave(function () {
-            $('.accordion_list li').css('width', '20%');
-        })
-    </script>
-    <!--手风琴E-->
-    <!--2.滑动列表S-->
-    <script>
-        $(function () {
-            var Accordion = function (el, multiple) {
-                this.el = el || {};
-                this.multiple = multiple || false;
-                // Variables privadas
-                var links = this.el.find('.link');
-                // Evento
-                links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
-            };
-            Accordion.prototype.dropdown = function (e) 
-            };
-            var accordion = new Accordion($('#accordion'), false);
-        });
-    </script>
-    <!--2.滑动列表E-->
-    <!--计算滚动高度触发特效S-->
-    <script>
-        function revealOnScroll() {
-            var scrolled = $(window).scrollTop();
-
-            // 视窗，即viewport，页面可视范围的窗口
-            setTimeout(function(){
-                $(".su-accordion").each(function() {
-                    var current = $(this), // 当前元素
-                            w_height = $(window).outerHeight(), //视窗高度
-                            offsetTop = current.offset().top; //当前元素离顶部的高度
-
-                    // 计算高度差（此处预留50是为了看效果）
-                    // 当元素进入视窗时，添加class
-                    if (scrolled + w_height - 50 > offsetTop) {
-                        current.addClass("fadeInUp");
-                    } else {
-                        current.removeClass("fadeInUp");
-                    }
-                });
-            },200);
-            setTimeout(function(){
-                $("#accordion").each(function() {
-                    var current = $(this), // 当前元素
-                            w_height = $(window).outerHeight(), //视窗高度
-                            offsetTop = current.offset().top; //当前元素离顶部的高度
-
-                    // 计算高度差（此处预留50是为了看效果）
-                    // 当元素进入视窗时，添加class
-                    if (scrolled + w_height - 50 > offsetTop) {
-                        current.addClass("fadeInUp");
-                    } else {
-                        current.removeClass("fadeInUp");
-                    }
-                });
-            },600)
-
-        }
-        $(window).on("scroll", revealOnScroll);
-    </script>
-    <!--计算滚动高度触发特效E-->
-    <!--倒计时-->
-    <script language="javascript" type="text/javascript">
-        var interval = 1000;
-        function ShowCountDown(year,month,day,hour,minute,second,divname)
-        {
-            var now = new Date();
-            var endDate = new Date(year, month-1, day,hour,minute,second);
-            var leftTime=endDate.getTime()-now.getTime();
-            if(leftTime>0){
-                var leftsecond = parseInt(leftTime/1000);
-                var day1=Math.floor(leftsecond/(60*60*24));
-                var hour1=Math.floor((leftsecond-day1*24*60*60)/3600);
-                var minute1=Math.floor((leftsecond-day1*24*60*60-hour1*3600)/60);
-                var second1=Math.floor(leftsecond-day1*24*60*60-hour1*3600-minute1*60);
-                var cc = document.getElementById(divname);
-                cc.innerHTML = "剩余："+day1+"天"+hour1+"小时"+minute1+"分"+second1+"秒";
-            }else{
-                var cc = document.getElementById(divname);
-                cc.innerHTML = "剩余：0天0小时0分0秒";
-            }
-        }
-        window.setInterval(function(){ShowCountDown(2017,9,27,10,02,0,'divdown1');}, interval);
-    </script>
-    <!--倒计时-->
-</div>
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
+</script>
 </body>
 </html>
 
