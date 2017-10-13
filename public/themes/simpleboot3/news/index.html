@@ -5,23 +5,26 @@
 </div>
 <div class="news">
     <div class="content">
-        <a href="/Home/News/detail/news_id/540.html">
+
+        <foreach name="news" item="vo">
+        <a href="/Home/News/detail/id/{$vo.id}">
             <div class="child">
                 <div class="cl">
                 <div class="childTime">
-                    <p class="timeMonth">July</p>
-                    <p class="timeDay">11</p>
+                    <p class="timeMonth">{$vo.month}</p>
+                    <p class="timeDay">/{$vo.day}</p>
                 </div>
                 <div class="childInfo">
-                    <p class="title">新元创想正式推出类分答语言社交服务系统，浅析分答在线付费语音问答系</p>
+                    <p class="title">{$vo.post_title}</p>
 
                     <p class="info">
-                        新元创想正式推出类分答语言社交服务系统，适用于企业售前售后的语音服务模式，提高客户活跃度</p>
+                        {$vo.post_excerpt}</p>
                 </div>
                 <div class="childlink"><i class="iconfont">&#xe607;</i></div>
                 </div>
             </div>
         </a>
+        </foreach>
 
     </div>
 </div>

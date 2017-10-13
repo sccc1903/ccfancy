@@ -7,6 +7,7 @@
 <div class="product_detail">
     <div class="detail_title">{$case_data.name}</div>
     <div class="detail_info">{$case_data.description}</div>
+    <div class="detail_info">{$case_data.content}</div>
     <div class="computer_animate">
         <div class="computer">
             <div class="computerBox" id="computerBg">
@@ -18,7 +19,7 @@
         <foreach name="photos" item="v1">
             <img src="/upload/{$v1.url}" alt="" class="info_img"/>
         </foreach>
-
+        <input type="hidden" value="/upload/{$photos['0']['url']}" class="photo"/>
     </div>
     <div>
         <a href="/goodcase/case/index">
@@ -96,6 +97,11 @@
     }).mouseleave(function () {
         start()
     })
+</script>
+<script>
+    var photo = $('.photo').val();
+    console.log(photo);
+    $('.computerBg').css({'background-image':'url('+photo+')','background-size':'100%'})
 </script>
 <include file="public@footer"/>
 
