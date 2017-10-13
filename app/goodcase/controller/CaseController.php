@@ -19,7 +19,9 @@ class CaseController extends HomeBaseController{
     public function detail() {
         $case_id = $this->request->param('id');
         $case_data = Db::name('case')->where('id',$case_id)->find();
-
+        $case_data['content'] = htmlspecialchars_decode($case_data['content']);
+        $photos = unserialize($case_data['photos']);
+        $this->assign('photos',$photos);
         $this->assign('case_data',$case_data);
         return $this->fetch(':detail');
     }

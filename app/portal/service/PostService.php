@@ -168,7 +168,7 @@ class PostService
     }
 
     //下一篇文章
-    public function publishedNextArticle($postId, $categoryId = 0)
+    public function     publishedNextArticle($postId, $categoryId = 0)
     {
         $portalPostModel = new PortalPostModel();
 
