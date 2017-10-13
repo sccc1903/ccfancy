@@ -10,6 +10,26 @@
 .computer{width: 616px;height:453px;background-image:url("../img/computer.png"); position: relative;margin: 0 auto}
 .computerBox{position: absolute;width: 94%;height: 315px;margin: auto;left: 0;right: 0;top: 12px;overflow: hidden}
 .computerBg{background-image:url("../img/info_img.png");position: absolute;width: 100%;height: 813px;background-size: 100%;margin: auto;left: 0;right: 0;}
+.news{width: 100%;}
+.news .content .child>div{width: 70%;margin: 0 auto;}
+.news .child{padding: 20px 0}
+.news .child:hover {
+    transform: none;
+}
+.news .child>div {
+    transform: translateX(0);
+    transition-duration: .5s;
+    -ms-transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+}
+.news .child>div:hover {
+    transform: translateX(10px);
+}
+.news .content .child:hover{background: rgba(0,0,0,0.4);}
+.news .content a:nth-child(n) .child .childTime{float: left;}
+.news .content a:nth-child(n) .child .childInfo {float: left;margin-left: 5.3%;margin-right: 0}
+.news .content a:nth-child(n) .child .childlink i {float: right;margin-left: 5.3%;margin-right: 0}
 @media (max-width: 1920px) and (min-width: 1440px){
     .product_detail{width: 960px;}
     .product_detail .detail_title{line-height: 44px;font-size: 26px;color: #434343;}
