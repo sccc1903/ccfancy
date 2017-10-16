@@ -1,0 +1,122 @@
+<include file="public@head"/>
+<style type="text/css">
+    body, html, #container {
+        height: 100%;
+        margin: 0px;
+        font: 12px Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial;
+    }
+
+    .info-title {
+        color: white;
+        font-size: 14px;
+        background-color: rgba(0, 155, 255, 0.8);
+        line-height: 26px;
+        padding: 0px 0 0 6px;
+        font-weight: lighter;
+        letter-spacing: 1px
+    }
+
+    .info-content {
+        padding: 4px;
+        color: #666666;
+        line-height: 23px;
+    }
+
+    .info-content img {
+        float: left;
+        margin: 3px;
+    }
+    .contactus{
+        position: static;
+    }
+    .map{height: 600px;margin-top: 88px;}
+    @media (max-width: 1023px){
+        .map {
+            margin-top: 75px;
+        }
+    }
+    @media (max-width: 1023px){
+        .map{
+            height: 500px;
+        }
+    }
+
+</style>
+<div class="map">
+    <div id="container" tabindex="0"></div>
+    <div id='panel'></div>
+</div>
+<!--大屏点击显示联系我们S-->
+<div class="content-div contactus">
+    <div class="container cl">
+        <div class="left"><span class="redTitle">Hi,are you ready?</span>
+
+            <p class="title">准备好开始了吗?<br>那就与我们取得联系吧</p>
+
+            <p class="info">有一个品牌项目想和我们谈谈吗?您可以填写右边的表格，让我们了解您的项目需求，这是一个良好的开始，我们将会尽快与你取得联系。当然也欢迎您给我们写信或是打电话，让我们听到你的声音!</p>
+
+            <div class="footTitle"><span class="titleB">NEW IDEAS</span><span>新元创想信息技术</span></div>
+            <p class="info">地 址：青岛胶州市宝龙城市广场写字楼15栋2205</p>
+
+            <p class="info">电 话：+0532 - 8662 0102&nbsp;&nbsp;&nbsp;&nbsp;186-6186-1896 </p>
+
+            <p class="info">传 真：+0532 - 8662 0102</p>
+
+            <p class="info">E-mail：sun@7k999.com </p>
+
+        </div>
+        <div class="right"><p class="title">填写您的项目信息</p>
+
+            <p class="line"><input type="text" class="inputText" id="listName1" value="您的姓名"></p>
+
+            <p class="line"><input type="text" class="inputText" id="listCompany1" value="公司名称"></p>
+
+            <p class="line"><input type="text" class="inputText" id="listEmail1" value="您的电话"></p>
+
+            <p class="line"><input type="text" class="inputText" id="listTitle1" value="项目主题"></p>
+
+            <p class="line"><textarea class="textArea" id="listInfo1">告诉我们您的项目基本信息</textarea></p>
+
+            <p class="line"><input type="button" class="inputBtn" onclick="contactSubmit('/front/index/contact',$('#listName1').val(),$('#listCompany1').val(),$('#listEmail1').val(),$('#listTitle1').val(),$('#listInfo1').val())" value="立即提交"></p></div>
+    </div>
+    <img src="__TMPL__/public/assets/img/closeIcon.png" alt="" class="closeBtn"/>
+</div>
+<!--大屏点击显示联系我们E-->
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.0&key=4bffee595a78c375dc18332236ef25af"></script>
+<script type="text/javascript">
+    var map = new AMap.Map('container',{resizeEnable: true,zoom:4});
+    var markers = []; //province见Demo引用的JS文件
+    var marker;
+    var icon = new AMap.Icon({
+        image: 'http://www.weiqimap.com/res/img/coordinate.png'
+    });
+    map.setFitView();
+    map = new AMap.Map('container', {
+        resizeEnable: true,
+        zoom: 13,
+        center: [120.038385,36.271047]
+    });
+    marker = new AMap.Marker({
+        position: [120.032636,36.261735],
+        icon: icon
+    });
+    marker.setMap(map);
+    marker.on('click', function (e) {
+        infowindow.open(map, e.target.getPosition());
+    });
+    AMap.plugin('AMap.AdvancedInfoWindow', function () {
+        infowindow = new AMap.AdvancedInfoWindow({
+            content: '<div class="info-title">初创工作室</div><div class="info-content">' +
+            '<img src="https://webapi.amap.com/images/amap.jpg">' +
+            '初创工作室成立于2017年，是一家专业网站建设工作室。<br/>' +
+            '</div>',
+            offset: new AMap.Pixel(0, -30)
+        });
+        infowindow.open(map, [120.032636,36.261735]);
+    })
+
+
+</script>
+<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+<include file="public@footer"/>
+

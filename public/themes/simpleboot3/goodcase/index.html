@@ -69,29 +69,5 @@
     })
 </script>
 <!--产品列表E-->
-<!--计算滚动高度触发特效S-->
-<script>
-    $(window).on("scroll", function () {
-        var scrolled = $(window).scrollTop();
-
-        // 视窗，即viewport，页面可视范围的窗口
-        setTimeout(function () {
-            $(".about>div").each(function () {
-                var current = $(this), // 当前元素
-                    w_height = $(window).outerHeight(), //视窗高度
-                    offsetTop = current.offset().top; //当前元素离顶部的高度
-                height=current.height();
-                height1=$('#header').height();
-                // 计算高度差（此处预留50是为了看效果）
-                // 当元素进入视窗时，添加class
-
-                if (scrolled + w_height >= offsetTop&&scrolled<=offsetTop+height+height1) {
-                    current.addClass("fadeInUp");
-                }
-            });
-        }, 200);
-    });
-</script>
-<!--计算滚动高度触发特效E-->
 <include file="public@footer"/>
 

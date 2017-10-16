@@ -13,7 +13,7 @@
 .computer_animate{margin-top: 10px}
 .news{width: 100%;}
 .news .content .child>div{width: 70%;margin: 0 auto;}
-.news .child{padding: 20px 0;position: relative}
+.news .child{padding: 20px 0;position: relative;margin-bottom: 0}
 .news .child:hover {
     transform: none;
 }
