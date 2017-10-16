@@ -1026,6 +1026,7 @@
         -o-transform:scale(1.2); 	/* Opera */
     }
 }
+.case_banner{height: 500px;margin-top: 88px;background-position: center;background-size: cover;}
 #footer {
     background: #23ade5;
     color: #fff;
@@ -1851,6 +1852,8 @@
     #footer .footer_r a {
         margin: 10px 5px 0;
     }
+    .case_banner{margin-top: 75px;height: 250px;}
+
 }
 
 @media (max-width: 479px) {
@@ -2023,6 +2026,7 @@
         width: 46px;
         height: 46px;
     }
+    .product{padding-top: 20px;}
 }
 
 @media (min-width: 1440px) and (max-width: 1920px ) {
