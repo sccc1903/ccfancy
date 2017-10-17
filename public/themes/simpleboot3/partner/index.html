@@ -42,7 +42,7 @@
         font-size: 20px;
         position: absolute;
         width: 288px;
-        height: 50px;
+        /*height: 50px;*/
         left: 0;
         bottom: 0;
         transition-duration: .5s;
@@ -52,7 +52,7 @@
         top: 200px
     }
 
-    .content_summary, .content_btn {
+    .partner li .mask .content .content_summary,.partner li .mask .content .content_btn {
         opacity: 0
     }
 
@@ -63,78 +63,254 @@
     .partner li:hover .mask .content .content_summary, .partner li:hover .mask .content .content_btn {
         opacity: 1
     }
-    .partner{width: 864px;overflow: hidden;position: relative}
-    .partner ul{display: flex}
-    .partner .left{position: absolute;left: 0;top: 0;bottom: 0;margin: auto;}
+    .partner .mask .content .content_summary {margin: 20px 0}
+    .partner .mask .content .content_btn div {font-size: 14px;border:1px solid #fff;background: transparent;color: #fff;padding: 4px 25px;display: inline-block;margin-top: 10px}
+
+    .partner {
+        width: 864px;
+        overflow: hidden;
+        position: relative;
+        height: 420px;
+        margin: 0 auto;
+
+    }
+
+    .partner ul {
+        display: -webkit-box;
+        position: absolute;
+    }
+
+    .partner .left {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: -75px;
+    }
+
+    .partner .right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: -75px
+    }
+
+    .partner .btn {
+        height: 75px;
+        text-align: center;
+    }
+
+    .partner .btn img {
+        width: 50%;
+    }
+    .partner_small{width: 100%;display: none}
+    .partner_small ul li{margin-bottom: 20px;}
+    .partner_small ul li>div{float: left;width: 35%;height: 300px;}
+    .partner_small ul li .mask{float: left;width: 65%}
+    .partner_small .mask{position: relative;background: #23ade5}
+    .partner_small .mask .content{position: absolute;text-align: center;top: 50%;transform: translateY(-50%);width: 100%;font-size: 20px;color: #fff}
+    .partner_small .mask .content .content_title{font-size: 22px}
+    .partner_small .mask .content .content_summary{margin: 20px 0}
+    .partner_small .mask .content .content_btn div {font-size: 14px;border:2px solid #fff;background: transparent;color: #fff;padding: 4px 20px;display: inline-block}
+    @media (max-width: 1023px)and (min-width: 640px){
+        .partner{display: none}
+        .partner_small{display: block}
+    }
+    @media (max-width: 640px){
+        .partner{width: 100%;height: auto}
+        .partner ul{width: 100%;display: block;position: static;}
+        .partner ul li{width: 50%;height: auto;}
+        .partner li .mask,.partner li .mask .bg,.partner li .mask .content{width: 100%;height: auto}
+        .partner li .mask .bg {
+            background: #141414;
+            opacity: 0.8
+        }
+        .partner li .mask .content,.partner li:hover .mask .content{top: 50%;font-size: 16px;transform: translateY(-50%);position: absolute}
+        .partner li .mask .content .content_summary, .partner li .mask .content .content_btn{opacity: 1}
+        .partner .btn{display: none}
+        .partner .mask .content .content_title{font-size: 16px}
+        .partner .mask .content .content_summary{margin: 10px 0;font-size: 14px;}
+        .partner .mask .content .content_btn div{font-size: 12px;}
+    }
 </style>
 <div class="case_banner"></div>
-<div class="partner">
-    <ul class="cl">
-        <li>
-            <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
-
-            <div class="mask">
-                <div class="bg"></div>
-                <div class="content">
-                    <p class="content_title">测试</p>
-
-                    <p class="content_summary">这是详细介绍！</p>
-                    <a href="" class="content_btn">
-                        <button>查看详情</button>
-                    </a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
-
-            <div class="mask">
-                <div class="bg"></div>
-                <div class="content">
-                    <p class="content_title">测试</p>
-
-                    <p class="content_summary">这是详细介绍！</p>
-                    <a href="" class="content_btn">
-                        <button>查看详情</button>
-                    </a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
-
-            <div class="mask">
-                <div class="bg"></div>
-                <div class="content">
-                    <p class="content_title">测试</p>
-
-                    <p class="content_summary">这是详细介绍！</p>
-                    <a href="" class="content_btn">
-                        <button>查看详情</button>
-                    </a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
-
-            <div class="mask">
-                <div class="bg"></div>
-                <div class="content">
-                    <p class="content_title">测试</p>
-
-                    <p class="content_summary">这是详细介绍！</p>
-                    <a href="" class="content_btn">
-                        <button>查看详情</button>
-                    </a>
-                </div>
-            </div>
-        </li>
-    </ul>
-    <div class="left btn"><img src="__TMPL__/public/assets/img/bannerLeft.png" alt=""/>
-    </div>
-    <div class="right btn"><img src="__TMPL__/public/assets/img/bannerRight.png" alt=""/>
-    </div>
+<div style="border-bottom: 1px solid #949494;padding-bottom: 50px;">
+<div style="text-align: center">
+    <p class="mainTitle">OUR TEAM</p>
+    <div class="mainSub"></div>
+    <span class="mainInfo">我们的团队</span>
 </div>
+    <div class="partner">
+        <ul class="cl">
+            <li>
+                <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
+
+                <div class="mask">
+                    <div class="bg"></div>
+                    <div class="content">
+                        <p class="content_title">测试</p>
+
+                        <p class="content_summary">这是详细介绍！</p>
+                        <a href="" class="content_btn">
+                            <div>查看详情</div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
+
+                <div class="mask">
+                    <div class="bg"></div>
+                    <div class="content">
+                        <p class="content_title">测试</p>
+
+                        <p class="content_summary">这是详细介绍！</p>
+                        <a href="" class="content_btn">
+                            <div>查看详情</div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
+
+                <div class="mask">
+                    <div class="bg"></div>
+                    <div class="content">
+                        <p class="content_title">测试</p>
+
+                        <p class="content_summary">这是详细介绍！</p>
+                        <a href="" class="content_btn">
+                            <div>查看详情</div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
+
+                <div class="mask">
+                    <div class="bg"></div>
+                    <div class="content">
+                        <p class="content_title">测试</p>
+
+                        <p class="content_summary">这是详细介绍！</p>
+                        <a href="" class="content_btn">
+                            <div>查看详情</div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
+
+                <div class="mask">
+                    <div class="bg"></div>
+                    <div class="content">
+                        <p class="content_title">测试</p>
+
+                        <p class="content_summary">这是详细介绍！</p>
+                        <a href="" class="content_btn">
+                            <div>查看详情</div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg" alt="" width="100%"/>
+
+                <div class="mask">
+                    <div class="bg"></div>
+                    <div class="content">
+                        <p class="content_title">测试</p>
+
+                        <p class="content_summary">这是详细介绍！</p>
+                        <a href="" class="content_btn">
+                            <div>查看详情</div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="left btn"><img src="__TMPL__/public/assets/img/bannerLeft.png" alt=""/>
+        </div>
+        <div class="right btn"><img src="__TMPL__/public/assets/img/bannerRight.png" alt=""/>
+        </div>
+    </div>
+    <div class="partner_small">
+   <ul>
+       <li class="cl">
+           <div style="background-image: url('https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg');background-position:top center;background-size: cover" class="partner_avater">
+           </div>
+           <div class="mask">
+               <div class="content">
+                   <p class="content_title">测试</p>
+
+                   <p class="content_summary">这是详细介绍！</p>
+                   <a href="" class="content_btn">
+                       <div>查看详情</div>
+                   </a>
+               </div>
+           </div>
+       </li>
+       <li class="cl">
+           <div style="background-image: url('https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg');background-position:top center;background-size: cover" class="partner_avater">
+           </div>
+           <div class="mask">
+               <div class="content">
+                   <p class="content_title">测试</p>
+
+                   <p class="content_summary">这是详细介绍！</p>
+                   <a href="" class="content_btn">
+                       <div>查看详情</div>
+                   </a>
+               </div>
+           </div>
+       </li>
+   </ul>
+</div>
+</div>
+<div style="text-align: center;padding-top: 50px;">
+        <p class="mainTitle">JOIN US</p>
+        <div class="mainSub"></div>
+        <span class="mainInfo">加入我们</span>
+    <div style="font-size: 16px;width: 80%;margin: 0 auto 50px;text-align: center">如果你有意向拥有一个与众不同的网站，那你一定要联系我们。<br/>
+    如果你有意向加入我们，作为我们其中的一份子，也请你联系我们。<br/>
+    你们可以留言，也可以直接联系我们。我们的联系方式在右侧哦！</div>
+</div>
+<script>
+    $('.partner').mouseenter(function () {
+        $('.left').animate({"left": "0px"}, 300);
+        $('.right').animate({"right": "0px"}, 300);
+    }).mouseleave(function () {
+        $('.left').animate({"left": "-75px"}, 300);
+        $('.right').animate({"right": "-75px"}, 300);
+    });
+    var w = $('.partner ul li').length * $('.partner ul li').width(),
+            l=$('.partner ul').css('left');
+    l=l.substring(0,l.length-2);
+//    $('.partner ul').width(w);
+    var i=3;
+    $('.left').click(function(){
+        if(i<=0){
+            i=3;
+            $('.partner ul').animate({'left':0},300);
+        }else{
+            i--;
+            $('.partner ul').animate({'left':288*(i-3)},300);
+        }
+    });
+    $('.right').click(function(){
+        if(i>=$('.partner ul li').length){
+            i=3;
+            $('.partner ul').animate({'left':0},300);
+        }else{
+            i++;
+            $('.partner ul').animate({'left':-288*(i-3)},300);
+        }
+    });
+</script>
 <include file="public@footer"/>
 
