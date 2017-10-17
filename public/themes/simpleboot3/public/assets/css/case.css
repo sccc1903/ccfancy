@@ -54,5 +54,6 @@
     .computer_animate{display: none}
     .product_detail .info_img{width: 100%;}
     .product_detail .goback,.product_detail .goutong{width: 100px;height: 30px;line-height: 30px;font-size: 12px;}
-
+    .news .content a:nth-child(n) .child .childInfo {float: left;margin-left:0;margin-right: 0;color: #333;position: absolute;top: 50%;transform: translateY(-50%);left: 30%}
+    .news .content .child>div{width: 85%}
 }
