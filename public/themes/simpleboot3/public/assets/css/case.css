@@ -43,6 +43,15 @@
 }
 @media (max-width: 1439px)and (min-width: 1024px){
     .product_detail .goback,.product_detail .goutong{width: 150px;height: 40px;line-height: 40px;font-size: 16px;}
+    .news .content a:nth-child(n) .child .childTime{width: 25%}
+    .news .content a:nth-child(n) .child .childInfo{left: 25%}
+}
+@media (max-width: 1023px) and (min-width: 640px) {
+    .news .content a:nth-child(n) .child .childTime{width: 25%}
+    .news .content a:nth-child(n) .child .childInfo{left: 25%}
+    .news .child .childTime .timeMonth{font-size: 18px}
+    .news .child .childTime .timeDay{font-size: 50px;}
+    .news .child .childInfo .title{font-size: 14px;margin-bottom: 6px;}
 }
 @media (max-width: 1023px){
     .product_detail{width: 85%;}
@@ -54,6 +63,9 @@
     .computer_animate{display: none}
     .product_detail .info_img{width: 100%;}
     .product_detail .goback,.product_detail .goutong{width: 100px;height: 30px;line-height: 30px;font-size: 12px;}
-    .news .content a:nth-child(n) .child .childInfo {float: left;margin-left:0;margin-right: 0;color: #333;position: absolute;top: 50%;transform: translateY(-50%);left: 30%}
+    .news .content a:nth-child(n) .child .childInfo {float: left;margin-left:0;margin-right: 0;color: #333;position: absolute;top: 50%;transform: translateY(-50%);left: 22%}
     .news .content .child>div{width: 85%}
+    .news .child .childTime .timeMonth{font-size: 18px}
+    .news .child .childTime .timeDay{font-size: 50px;}
+    .news .child .childInfo .title{font-size: 14px;margin-bottom: 6px;}
 }

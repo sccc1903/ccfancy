@@ -1788,6 +1788,7 @@
 
     .content-div {
         margin-top: 75px;
+        display: none;
     }
 
     #banner {
