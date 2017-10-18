@@ -13,4 +13,7 @@ class PartnerController extends HomeBaseController{
     public function index() {
         return $this->fetch(':index');
     }
+    public function detail() {
+        return $this->fetch(':detail');
+    }
 }

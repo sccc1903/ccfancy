@@ -19,7 +19,7 @@ class NewsModel extends Model{
         ->select()
         ->toArray();
         foreach($data as $k => $v){
-            $data[$k]['month'] = date('F',$v['update_time']);
+            $data[$k]['month'] = date('M',$v['update_time']);
             $data[$k]['day'] = date('d',$v['update_time']);
         }
         return $data;

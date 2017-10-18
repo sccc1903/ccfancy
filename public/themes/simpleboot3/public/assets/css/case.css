@@ -3,6 +3,10 @@
 .product_detail .info_img:nth-child(even){margin-left: 2%}
 .product_detail .detail_title{line-height: 52px;font-size: 30px;color: #434343;}
 .product_detail .detail_info{font-size: 16px;line-height: 30px;}
+.product_detail .detail_con{font-size: 18px;text-align: left}
+.product_detail .detail_fenye{font-size: 14px;}
+.product_detail .detail_fenye a{color: #23ade5}
+.product_detail .detail_fenye a:hover{text-decoration: underline}
 .product_detail .goback{margin: 20px 8px 0;display: inline-block;font-size: 22px;width: 215px;height: 50px;border: 2px solid #23ade5;color: #23ade5;text-align: center;line-height: 50px;cursor: pointer;transition-duration: .5s;-ms-transition-duration: .5s;-moz-transition-duration: .5s;-webkit-transition-duration: .5s;}
 .product_detail .goback:hover{background: #23ade5;color: #fff;}
 .product_detail .goutong{margin: 20px 8px 0;display: inline-block;font-size: 22px;width: 215px;height: 50px;border: 2px solid #23ade5;color: #fff;text-align: center;line-height: 50px;cursor: pointer;transition-duration: .5s;-ms-transition-duration: .5s;-moz-transition-duration: .5s;-webkit-transition-duration: .5s;background: #23ade5}
@@ -39,26 +43,47 @@
     .product_detail{width: 960px;}
     .product_detail .detail_title{line-height: 44px;font-size: 26px;color: #434343;}
     .product_detail .detail_info{font-size: 14px;line-height: 26px;}
+    .product_detail .detail_con{font-size: 14px;}
     .product_detail .goback,.product_detail .goutong{margin: 40px 6px 0;font-size: 18px;width: 182px;height: 42px;border: 2px solid #23ade5;line-height: 42px;}
 }
 @media (max-width: 1439px)and (min-width: 1024px){
     .product_detail .goback,.product_detail .goutong{width: 150px;height: 40px;line-height: 40px;font-size: 16px;}
     .news .content a:nth-child(n) .child .childTime{width: 25%}
     .news .content a:nth-child(n) .child .childInfo{left: 25%}
+    .product_detail{width: 85%;}
+    .product_detail .detail_title{font-size: 26px}
+    .product_detail .detail_info{font-size: 14px}
+    .product_detail .detail_con{font-size: 16px}
 }
 @media (max-width: 1023px) and (min-width: 640px) {
     .news .content a:nth-child(n) .child .childTime{width: 25%}
-    .news .content a:nth-child(n) .child .childInfo{left: 25%}
+    .news .content a:nth-child(n) .child .childInfo{left: 25%;width: 69%}
     .news .child .childTime .timeMonth{font-size: 18px}
     .news .child .childTime .timeDay{font-size: 50px;}
     .news .child .childInfo .title{font-size: 14px;margin-bottom: 6px;}
+    .product_detail .detail_title{font-size: 26px}
+    .product_detail .detail_info{font-size: 14px}
+    .product_detail .detail_con{font-size: 16px}
+    .product_detail{padding: 20px 0}
 }
 @media (max-width: 1023px){
     .product_detail{width: 85%;}
     .computer_animate{display: none}
     .product_detail .goback,.product_detail .goutong{width: 150px;height: 40px;line-height: 40px;font-size: 16px;}
 }
-@media (max-width: 480px){
+@media (max-width: 639px) and (min-width: 480px) {
+    .news .content .child>div{width: 85%}
+    .news .child .childTime .timeMonth{font-size: 18px}
+    .news .child .childTime .timeDay{font-size: 50px;}
+    .news .child .childInfo .title{font-size: 14px;margin-bottom: 6px;}
+    .news .content a .child .childlink{width: 7%}
+    .news .content a:nth-child(n) .child .childInfo{width: 69%}
+    .product_detail .detail_title{font-size: 24px}
+    .product_detail .detail_info{font-size: 14px}
+    .product_detail .detail_con{font-size: 16px}
+    .product_detail{padding: 20px 0}
+}
+@media (max-width: 479px){
     .product_detail{width: 85%;}
     .computer_animate{display: none}
     .product_detail .info_img{width: 100%;}
@@ -68,4 +93,10 @@
     .news .child .childTime .timeMonth{font-size: 18px}
     .news .child .childTime .timeDay{font-size: 50px;}
     .news .child .childInfo .title{font-size: 14px;margin-bottom: 6px;}
+    .news .content a .child .childlink{width: 7%}
+    .news .content a:nth-child(n) .child .childInfo{width: 69%}
+    .product_detail .detail_title{font-size: 24px}
+    .product_detail .detail_info{font-size: 14px}
+    .product_detail .detail_con{font-size: 16px}
+    .product_detail{padding: 20px 0}
 }

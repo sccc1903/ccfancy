@@ -17,4 +17,7 @@ class NewsController extends HomeBaseController{
         $this->assign('news',$data);
         return $this->fetch(':index');
     }
+    public function detail() {
+        return $this->fetch(':detail');
+    }
 }
