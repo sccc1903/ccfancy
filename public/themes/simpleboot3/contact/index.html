@@ -25,19 +25,19 @@
         </div>
         <div class="right"><p class="title">填写您的项目信息</p>
 
-            <p class="line"><input type="text" class="inputText" id="listName1" value="您的姓名"></p>
+            <p class="line"><input type="text" class="inputText" id="listName"></p>
 
-            <p class="line"><input type="text" class="inputText" id="listCompany1" value="公司名称"></p>
+            <p class="line"><input type="text" class="inputText" id="listCompany"></p>
 
-            <p class="line"><input type="text" class="inputText" id="listEmail1" value="您的电话"></p>
+            <p class="line"><input type="text" class="inputText" id="listEmail"></p>
 
-            <p class="line"><input type="text" class="inputText" id="listTitle1" value="项目主题"></p>
+            <p class="line"><input type="text" class="inputText" id="listTitle"></p>
 
-            <p class="line"><textarea class="textArea" id="listInfo1">告诉我们您的项目基本信息</textarea></p>
+            <p class="line"><textarea class="textArea" id="listInfo">告诉我们您的项目基本信息</textarea></p>
 
-            <p class="line"><input type="button" class="inputBtn" onclick="contactSubmit('/front/index/contact',$('#listName1').val(),$('#listCompany1').val(),$('#listEmail1').val(),$('#listTitle1').val(),$('#listInfo1').val())" value="立即提交"></p></div>
+            <p class="line"><input type="button" class="inputBtn" value="立即提交" onclick="submsg()"></p></div>
     </div>
-    <img src="__TMPL__/public/assets/img/closeIcon.png" alt="" class="closeBtn"/>
+    <img src="__TMPL__/public/assets/img/closeIcon.png" alt="" class="closeBtn" />
 </div>
 <!--大屏点击显示联系我们E-->
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.0&key=4bffee595a78c375dc18332236ef25af"></script>
@@ -72,7 +72,32 @@
         });
         infowindow.open(map, [120.032636,36.261735]);
     })
+    function submsg(){
+        var data={
+                name:$('#listName').val(),
+                company:$('#listCompany').val(),
+                phone:$('#listEmail').val(),
+                title:$('#listTitle').val(),
+                content:$('#listInfo').val()
+        };
+        $.post('/contact/contact/collect',{data:data},function(message){
+            if(message.status==1){
+                layer.open({
+                    content: message.msg
+                    ,skin: 'msg'
+                    ,time: 2 //2秒后自动关闭
+                });
+                window.location.reload();
+            }else{
+                layer.open({
+                    content: message.msg
+                    ,skin: 'msg'
+                    ,time: 2 //2秒后自动关闭
+                });
+            }
+        },'json')
 
+    }
 
 </script>
 <script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
