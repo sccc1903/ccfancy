@@ -1,9 +1,16 @@
 <include file="public@head"/>
 <link rel="stylesheet" href="__TMPL__/public/assets/css/case.css"/>
-<style>
-    .case_banner{background-image: url('__TMPL__/public/assets/img/case_banner.jpg');}
-</style>
-<div class="case_banner">
+<!--<style>-->
+    <!--.case_banner{background-image: url('__TMPL__/public/assets/img/case_banner.jpg');}-->
+<!--</style>-->
+<!--<div class="case_banner"></div>-->
+<div class="case_banner1">
+    <div id="particles" class="clearfix"></div>
+    <div class="banner_title">
+        <div>
+            动态
+        </div>
+    </div>
 </div>
 <div class="news">
     <div class="content">
@@ -30,6 +37,53 @@
 
     </div>
 </div>
-
+<style>
+    #particles {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+    }
+    .pg-canvas{height: 100%;background:url("__TMPL__/public/assets/img/landing.jpg") center ;}
+    canvas{
+        display: inline-block;
+        vertical-align: baseline;
+    }
+    canvas {
+        margin: 0;
+        padding: 0;
+        display: block;
+        border: 0;
+        font-size: 100%;
+    }
+    .case_banner1{
+        position: relative;
+        margin-top: 88px;
+    }
+    .banner_title{
+        position: relative;
+        /*width: 100%;*/
+        padding: 150px 0;
+        text-align: center;
+        font-size: 32px;
+        color: #fff;
+    }
+    .banner_title div{
+        border: 2px solid #fff;
+        padding: 10px 50px;
+        width: auto;
+        display: inline-block;
+        font-weight: bold;
+    }
+</style>
+<script src="__TMPL__/public/assets/js/jquery.particleground.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#particles').particleground({
+            dotColor: '#fff',
+            lineColor: '#ccc'
+        });
+    });
+</script>
 <include file="public@footer"/>
 
